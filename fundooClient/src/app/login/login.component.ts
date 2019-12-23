@@ -1,0 +1,32 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { UserServiceService } from '../user-service.service';
+
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent implements OnInit {
+
+  email = new FormControl();
+  password = new FormControl();
+
+  constructor(private userService: UserServiceService) { }
+  ngOnInit() { }
+  login() {
+    let newUsers = {
+      "email": this.email.value,
+      "password": this.password.value
+    }
+    this.userService.login(newUsers).subscribe(res=>{
+      console.log("data-->",res);
+       //console.log(res["data"][0].token)
+      localStorage.setItem('token',res["data"][0].token)
+      
+    })
+  }
+
+
+}

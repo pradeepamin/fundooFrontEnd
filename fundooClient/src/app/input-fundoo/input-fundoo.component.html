@@ -1,0 +1,48 @@
+
+  
+
+    <mat-toolbar color="primary">Demo</mat-toolbar>
+    <mat-card>
+        <mat-form-field>
+            <textarea matInput placeholder="Textarea" [(ngModel)]="enteredValue"></textarea>
+        </mat-form-field>
+            <button mat-raised-button color="primary" (click)="onAddPost()">Submit</button>
+            <i class="material-icons">
+                bookmark
+                </i>
+
+
+    </mat-card>
+
+
+    <mat-accordion multi=true>
+        <mat-expansion-panel *ngFor="let post of posts">
+          <mat-expansion-panel-header>
+           {{post.title}}
+          </mat-expansion-panel-header>
+          <p>{{post.content}}</p>
+         
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+    <p>{{ newPost}}</p>
+    <p>{{ enteredPost}}</p>
+  
+
+
+              <!-- <textarea rows="3" ></textarea>
+              <button (click)="onAddPost()">Save post</button>
+              <p>{{ newPost}}</p>
+              <p>{{ enteredPost}}</p> -->
+            
+         
+<!-- 
+    <mat-form-field appearance="outline">
+        <mat-label>Outline form field</mat-label>
+        <input matInput placeholder="Placeholder">
+       
+        <mat-hint>Hint</mat-hint>
+    </mat-form-field> -->
+
+    
