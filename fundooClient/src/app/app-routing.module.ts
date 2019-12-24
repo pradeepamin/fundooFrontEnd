@@ -7,6 +7,7 @@ import { InputFundooComponent } from './input-fundoo/input-fundoo.component';
 import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -37,8 +38,12 @@ const routes: Routes = [
   {
     path: 'resetPassword',
     component: ResetPasswordComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
   }
-
+  
 ];
 
 

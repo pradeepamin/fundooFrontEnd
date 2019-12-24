@@ -12,12 +12,15 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import {MatCardModule,MatInputModule,MatButtonModule,MatFormFieldModule,MatToolbarModule,
-        MatExpansionModule,MatTabsModule,MatCheckboxModule,MatIconModule, MatSelectModule,MatSnackBarModule} from '@angular/material';
+        MatExpansionModule,MatTabsModule,MatCheckboxModule,MatIconModule, MatSelectModule,
+        MatSnackBarModule} from '@angular/material';
 import { InputFundooComponent } from './input-fundoo/input-fundoo.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -27,7 +30,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     AppComponent,
     LoginComponent,
     RegisterComponent, 
-    InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent
+    InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     HttpClientModule,
     CommonModule,
     MatProgressBarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule
+    
     
   
     

@@ -23,4 +23,11 @@ export class UserServiceService {
     console.log("user--->",newUsers);
     return this.http.post(this.UserUrl + 'register', newUsers)
   }
+  forgotPassword(Email) {
+
+    return this.http.post(this.UserUrl + 'forgotPassword', Email)
+    
+  }
+
+
 }
