@@ -1,54 +1,41 @@
-<div className="root">
-  <MuiThemeProvider theme={theme}>
-    <AppBar>
-      <Toolbar>
-        <div className="Icon">
-          <div>
-            <IconButton className="menuButton" onClick={this.openDrawer}>
-              <MenuIcon />
-            </IconButton>
-          </div>
-          <div>
-            <img src={require('../assets/keep.jpeg')} style={{ width: '30px', height: '30px' }} />
-          </div>
-          <div style={{ color: "black", cursor: "pointer" }}>
-            <Typography className="title" variant="h6">
-              Archive </Typography>
-          </div>
-        </div>
-        <div className="searchAndIcon">
-          <div className="search">
-            <div>
-              <SearchIcon style={{ color: "black" }} />
-            </div>
-            <div>
-              <InputBase placeholder="Search…" />
-            </div>
-          </div>
-          <div className="sectionDesktop">
-            <div>
-              <IconButton>
-                <Refresh onClick={this.handleReload} />
-              </IconButton>
-            </div>
-            <div>
-              <IconButton>
-                <ViewAgenda />
-              </IconButton>
-            </div>
-            <div>
-              <IconButton>
-                <SettingsIcon />
-              </IconButton>
-            </div>
-          </div>
-        </div>
-        <div>
-          <IconButton aria-haspopup="true" onClick={this.handleProfileMenuOpen}>
-            <AccountCircle style={{ color: "black" }} />
-          </IconButton>
-        </div>
-      </Toolbar>
-    </AppBar>
-  </MuiThemeProvider>
-</div>
+ 
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="../.././../assets/googleKeepLogo.png" width="30px">
+    <h1 class="example-app-name">FundooNote</h1>
+
+    <div fxLayoutGap="20px" fxLayoutAlign="space-around center" fxFlex=50>
+      <mat-card fxLayout="row" fxFlex="100" fxLayoutGap="5px">
+        <mat-icon>search</mat-icon>
+        <input class="textboxDashboard" matInput placeholder="Search">
+      </mat-card>
+    </div>
+    <div fxLayoutAlign="space-around center" fxFlex=30>
+      <button mat-icon-button>
+        <mat-icon>refresh</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>view_agenda</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>settings</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>apps</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+    </div>
+
+
+
+  </mat-toolbar>
