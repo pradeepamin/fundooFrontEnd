@@ -8,6 +8,7 @@ import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashComponent } from './dash/dash.component';
 
 
 
@@ -36,12 +37,20 @@ const routes: Routes = [
     component: ForgotPasswordComponent
   },
   {
-    path: 'resetPassword',
+    path: 'resetPassword/:token',
     component: ResetPasswordComponent
   },
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'inputfundoo',
+    component: InputFundooComponent
+  },
+  {
+    path: 'dash',
+    component: DashComponent
   }
   
 ];

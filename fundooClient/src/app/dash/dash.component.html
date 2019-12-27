@@ -1,0 +1,140 @@
+<div class="container">
+      
+    <h2>Material buttons</h2>
+     <div fxLayout="row" fxLayoutGap="16px">
+     <button mat-raised-button>Basic</button>
+     <button mat-raised-button color="primary">Primary</button>
+     <button mat-raised-button color="accent">Accent</button>
+     <button mat-raised-button color="warn">Warn</button>
+     <button mat-raised-button disabled>Disabled</button>
+     <a mat-raised-button routerLink=".">Link</a>
+     </div>
+    
+    <h2>Material Icons</h2>
+     <div fxLayout="row" fxLayoutGap="16px">
+     <mat-icon>home</mat-icon>
+     <mat-icon color="primary">cake</mat-icon>
+     <mat-icon color="accent">beach_access</mat-icon>
+     <mat-icon color="warn">whatshot</mat-icon>
+     </div>
+    </div>
+
+
+    <main fxLayout="column" fxLayoutAlign="space-around">
+
+        <!-- Login section-->
+        <section fxLayout='column' fxLayoutAlign="space-around center" class="login">
+          <div>
+            <div fxFlex.xs="70vw" fxFlex.sm="65vw" fxFlex.lg="45vw" class="two_two">
+              <mat-card class="login-card">
+                <mat-card-content>
+                  <p>
+                    The Shiba Inu is the smallest of the six original 
+                  </p>
+                </mat-card-content>
+    
+                <mat-card-actions  fxLayout='column' class="social-logins">
+                  <button mat-raised-button color="accent">Google</button>
+                  <br>
+                  <button mat-raised-button color="accent">Facebook</button>
+                  <br>
+                  <button mat-raised-button color="accent">Twitter</button>
+                </mat-card-actions>
+                
+              </mat-card>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Button Section -->
+    
+    
+        <!-- Hidden Login Card -->
+        <!-- <section class="">
+            Login Card Here
+        </section> -->
+    
+    
+    </main>
+
+    <div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-1" fxFlex="15%">Item 1</div>
+  <div class="item item-2" fxFlex="20%" fxFlexOrder="3">Item 2</div>
+  <div class="item item-3" fxFlex>Item 3</div>
+</div>
+
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-4" fxFlex fxFlexOffset="50px"  fxFlexOffset.xs="0">Item 4</div>
+  <div class="item item-5" fxFlex="200px">Item 5</div>
+</div>
+
+
+
+
+
+<div style="text-align:center">
+    <h1>
+      Welcome to {{title}}!
+    </h1>
+  </div>
+  
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <a target="_blank" href="https://material.angular.io/">Angular Material</a>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <a target="_blank" href="https://www.npmjs.com/package/@angular/flex-layout">Flex-Layout</a>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <a target="_blank" href="https://www.letsboot.com/">Letsboot.com</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <!-- g                g -->
+
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="20%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg">
+    </div>
+    <div fxFlex="20%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/LTLE4QGRVQ.jpg">
+    </div>
+    <div fxFlex="20%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/R926LU1YEA.jpg">
+    </div>
+    <div fxFlex="20%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/U9PP3KXXY2.jpg">
+    </div>
+  </div>
+
+
+
+  <!-- gggggggggggggggggggggg -->
+
+  <mat-form-field class="search-form">
+    <input matInput placeholder="Search Picture" type="text">
+  </mat-form-field>
+  <button button="submit" mat-raised-button color="primary">Search</button>
+  <br>
+  
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card class="card-picture" *ngFor="let picture of pictures">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="80%">{{picture.title}}</span>
+        <mat-icon fxFlex="10%">mode_edit</mat-icon>
+        <mat-icon fxFlex="10%">delete</mat-icon>
+      </mat-card-title>
+      <img mat-card-image [src]="picture.img">
+    </mat-card>
+  </div>
+ 

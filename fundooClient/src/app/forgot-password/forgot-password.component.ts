@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { UserServiceService } from '../user-service.service';
+import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 @Component({
@@ -24,9 +24,13 @@ export class ForgotPasswordComponent implements OnInit {
     }
     this.userService.forgotPassword(Email).subscribe(res=>{
       console.log("data-->",res);
+      // console.log("forgot token",res["data"][0]);
+      let urlWithToken=res["data"][0]
+      console.log("URLL token-->",urlWithToken);
+
+      localStorage.setItem('resetPasswortdToken',urlWithToken)
       this.router.navigate(['/login'])
       this.matSnackBar.open("Veriffication sent to email please Login email","OK")
-
   
     },error=>{
       this.matSnackBar.open("Error in Resetting Password","Ok",{duration:5000})

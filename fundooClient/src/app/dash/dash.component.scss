@@ -1,0 +1,49 @@
+main {
+  
+    min-height: 100vh;
+    
+    background: #00C9FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #92FE9D, #4bde5c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #92FE9D, #4bde5c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    .login {
+      
+      background: rgba(255,255,255,.0);
+  
+      .login-card {
+        //width: 20vw;
+        color: #555;
+        border-radius: 10px;
+        
+  
+        .social-logins {
+          margin: 10px 20px;
+  
+          button {
+            // background: #fff;
+            color: #555;
+          }
+        }
+      
+      }
+    }
+  
+  }
+
+
+//   gdsfdfjdfdjfdjf
+.img {
+    width: 100%;
+    margin-bottom: 18%;
+  }
+  .card-picture {
+    width: 23%;
+    margin-bottom: 2%;
+  }
+  .container {
+    min-height: 100%;
+    width: 100%;
+  }
+  .search-form {
+    width: 90%;
+  }

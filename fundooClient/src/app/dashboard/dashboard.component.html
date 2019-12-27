@@ -1,24 +1,54 @@
-
-<div class="login-page">
-	<mat-card class="mat-elevation-z12">
-		
-		<mat-card-content>
-			<form action="">
-                <!-- <mat-toolbar>My App</mat-toolbar> -->
-                
-
-                <mat-drawer-container class="example-container">
-                    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
-                    <mat-drawer-content>Main content</mat-drawer-content>
-                  </mat-drawer-container>
-
-
-            </form>
-		</mat-card-content>
-    </mat-card>
-    
-
-    
+<div className="root">
+  <MuiThemeProvider theme={theme}>
+    <AppBar>
+      <Toolbar>
+        <div className="Icon">
+          <div>
+            <IconButton className="menuButton" onClick={this.openDrawer}>
+              <MenuIcon />
+            </IconButton>
+          </div>
+          <div>
+            <img src={require('../assets/keep.jpeg')} style={{ width: '30px', height: '30px' }} />
+          </div>
+          <div style={{ color: "black", cursor: "pointer" }}>
+            <Typography className="title" variant="h6">
+              Archive </Typography>
+          </div>
+        </div>
+        <div className="searchAndIcon">
+          <div className="search">
+            <div>
+              <SearchIcon style={{ color: "black" }} />
+            </div>
+            <div>
+              <InputBase placeholder="Search…" />
+            </div>
+          </div>
+          <div className="sectionDesktop">
+            <div>
+              <IconButton>
+                <Refresh onClick={this.handleReload} />
+              </IconButton>
+            </div>
+            <div>
+              <IconButton>
+                <ViewAgenda />
+              </IconButton>
+            </div>
+            <div>
+              <IconButton>
+                <SettingsIcon />
+              </IconButton>
+            </div>
+          </div>
+        </div>
+        <div>
+          <IconButton aria-haspopup="true" onClick={this.handleProfileMenuOpen}>
+            <AccountCircle style={{ color: "black" }} />
+          </IconButton>
+        </div>
+      </Toolbar>
+    </AppBar>
+  </MuiThemeProvider>
 </div>
-
-

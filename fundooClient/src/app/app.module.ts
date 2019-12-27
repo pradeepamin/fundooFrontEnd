@@ -17,10 +17,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule,MatInputModule,MatButtonModule,MatFormFieldModule,MatToolbarModule,
         MatExpansionModule,MatTabsModule,MatCheckboxModule,MatIconModule, MatSelectModule,
         MatSnackBarModule} from '@angular/material';
+import {MatListModule} from '@angular/material/list';
+import {FlexLayoutModule} from '@angular/flex-layout';
 import { InputFundooComponent } from './input-fundoo/input-fundoo.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashComponent } from './dash/dash.component';
 
 
 
@@ -30,7 +33,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     LoginComponent,
     RegisterComponent, 
-    InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, DashboardComponent
+    InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, DashboardComponent, DashComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +52,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CommonModule,
     MatProgressBarModule,
     MatSnackBarModule,
-    MatSidenavModule
-    
-    
+    MatSidenavModule,
+    FlexLayoutModule,
+    MatListModule
   
     
   ],
