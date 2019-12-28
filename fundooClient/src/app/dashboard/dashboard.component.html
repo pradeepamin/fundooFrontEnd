@@ -1,41 +1,131 @@
- 
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <img src="../.././../assets/googleKeepLogo.png" width="30px">
-    <h1 class="example-app-name">FundooNote</h1>
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex="100">
 
-    <div fxLayoutGap="20px" fxLayoutAlign="space-around center" fxFlex=50>
-      <mat-card fxLayout="row" fxFlex="100" fxLayoutGap="5px">
-        <mat-icon>search</mat-icon>
-        <input class="textboxDashboard" matInput placeholder="Search">
-      </mat-card>
+  <mat-toolbar class=" tool" color="WHITE" fxLayout="row">
+
+    <div class="app-icon" fxLayout="row" fxLayoutAlign="start start" fxLayoutAlign="space-around center" fxFlex="15"
+      fxFlex.xs="25">
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="img-icon" fxLayoutAlign="start center">
+        <img class="img" src="../../assets/fundooLogo.png">
+        <span fxHide.xs="true">{{titlename}}</span>
+        <span style="margin-left:1%;margin-top:4%;" *ngIf="titlename== null" fxHide.xs="true">FundooNotes</span>
+      </div>
     </div>
-    <div fxLayoutAlign="space-around center" fxFlex=30>
+
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="60" fxFlex="60" class="search">
+      <!-- <form class="search"> -->
+      <button mat-icon-button fxHide.xs="true">
+        <mat-icon>search</mat-icon>
+      </button>
+      <input matTooltip="Search" placeholder="Search" class="input" [(ngModel)]="search" (keyup)="lookup()">
+      <!-- </form> -->
+    </div>
+
+    <div id="refresh" fxLayout="row">
       <button mat-icon-button>
         <mat-icon>refresh</mat-icon>
       </button>
-
-      <button mat-icon-button>
-        <mat-icon>view_agenda</mat-icon>
-      </button>
-
-      <button mat-icon-button>
-        <mat-icon>settings</mat-icon>
-      </button>
-
-      <button mat-icon-button>
-        <mat-icon>apps</mat-icon>
-      </button>
-
-      <button mat-icon-button>
-        <mat-icon>account_circle</mat-icon>
-      </button>
-
     </div>
+
+    <!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+      (click)="openDialog1()" (click)="getImage()">
+      <div>
+        <img mat-card-avatar class="profile1" src="http://localhost:4000/user/{{profilePic}}" />
+      </div>
+    </button> -->
+
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlex="20"
+      fxLayoutGap="30px">
+      <button mat-icon-button fxHide.xs="true">
+      <mat-icon fxFlex="10" (click)="setGridAndListView()">icon</mat-icon>
+    </button>
+    </div>
+
+    <button mat-icon-button>
+      <div>
+        <img mat-card-avatar src="../../assets/download.jpeg" class="profile1"/>
+      </div>
+    </button> -
+
 
 
 
   </mat-toolbar>
+
+
+  <div class="sidenav">
+    <mat-divider></mat-divider>
+
+    <mat-sidenav-container style="height:100vh;">
+      <mat-sidenav #sidenav style="width: 240px;" mode="side">
+        <mat-nav-list>
+          <div class="mat_divider" fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+
+            <div>
+              <button mat-button (click)="notes()">
+                <!-- <img src="../../../assets/images/notes.svg"> -->
+                <i class="material-icons">emoji_objects</i>
+                Notes
+              </button>
+            </div>
+
+            <div>
+              <button mat-button (click)="reminder()">
+
+                <img src="../../assets/notification.svg">
+                reminders
+              </button>
+            </div>
+          </div>
+
+
+          <mat-divider></mat-divider>
+
+          <div class="mat_divider" fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+
+            <div id="label_name">LABELS</div>
+            <div *ngFor="let label of data">
+              <span class="labels1">{{label.name}}</span>
+            </div>
+
+            <div>
+              <button mat-button (click)="openDialog()">
+                <img src="../../assets/edit-24px.svg">
+                create labels
+              </button>
+            </div>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div class="mat_divider" fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+            <div>
+              <button mat-button (click)="archive()">
+                <img src="../..//assets/unarchive.svg">
+                archive
+              </button>
+            </div>
+            <div>
+              <button mat-button (click)="trash()">
+                <img src="../../assets/delete-24px.svg">
+                trash
+              </button>
+            </div>
+          </div>
+
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <!-- <mat-sidenav-content> -->
+        <app-createnote></app-createnote>
+      <!-- </mat-sidenav-content> -->
+    </mat-sidenav-container>
+
+  </div>
+
+</div>

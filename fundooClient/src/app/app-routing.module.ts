@@ -8,7 +8,9 @@ import { FullscreenOverlayContainer } from '@angular/cdk/overlay';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashComponent } from './dash/dash.component';
+
+import { DashhComponent } from './dashh/dashh.component';
+import { CreatenoteComponent } from './createnote/createnote.component';
 
 
 
@@ -48,9 +50,15 @@ const routes: Routes = [
     path: 'inputfundoo',
     component: InputFundooComponent
   },
+  
   {
-    path: 'dash',
-    component: DashComponent
+    path: 'dashh',
+    component: DashhComponent
+  },
+  
+  {
+    path: 'createnote',
+    component: CreatenoteComponent
   }
   
 ];

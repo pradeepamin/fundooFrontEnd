@@ -24,8 +24,10 @@ export class LoginComponent implements OnInit {
     }
     this.userService.login(newUsers).subscribe(res=>{
       console.log("data-->",res);
-       //console.log(res["data"][0].token)
+      //  console.log(res["data"][1].imageUrl)
       localStorage.setItem('token',res["data"][0].token)
+      localStorage.setItem('profilePic',res["data"][1].imageUrl)
+
       this.router.navigate(['/dashboard']);
     })
   }

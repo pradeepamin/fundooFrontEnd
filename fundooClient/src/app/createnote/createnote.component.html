@@ -1,0 +1,88 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="card">
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="120px">
+            <div style="width:400px">
+                <input class="input" fxLayoutAlign="start center" matInput placeholder="Take a note..">
+            </div>
+            <div fxLayout="row" style="width:150px">
+                <button mat-icon-button>
+                    <mat-icon matTooltip="New list">assignment_turned_in</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon matTooltip="New with drawing">brush</mat-icon>
+                </button> 
+                <button mat-icon-button>
+                    <mat-icon matTooltip="New note with images">images</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-card>
+</div>
+
+<!-- <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" >
+    <mat-card [style.backgroundColor]="setColor" class="secondcard"  *ngIf="flag==true" >
+      <div >
+    <input class="title" type="text" placeholder="Title..." [formControl]="title">
+    </div> 
+  
+    <div  style="margin-top: 13px;" >
+     <input  class="title" type="text" placeholder="Take a note..." [formControl]="description">
+     
+     </div>
+     <mat-card-footer>
+    <div fxLayout="row" fxLayoutAlign="space-between end" class="div">
+     <app-icon  (countChange)="receiveColorEvent($event)"></app-icon>
+     <button mat-button (click)="createNote()">close</button>
+      ///<button (click)=" createNote()">close</button> ////
+    </div>
+    </mat-card-footer>
+   </mat-card>
+</div>
+<app-cards></app-cards> -->
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-card [style.backgroundcolor]="setColor" class="secondcard">
+        <div>
+            <input class="title" type="text" placeholder="Tittle.....">
+        </div>
+        <div style="margin-top:13px;">
+            <input class="title" type="text" placeholder="Take a note...">
+        </div>
+        <mat-card-footer>
+          <div fxLayout="row" fxLayoutAlign="space-evenly" class="cardheight">
+            <button mat-icon-button>
+                <mat-icon matTooltip="New with drawing">brush</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon matTooltip="New with drawing">person_add</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon matTooltip="New with drawing">color_lens</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon matTooltip="New with drawing">photo_size_select_actual</mat-icon>
+            </button>
+            
+            <button mat-icon-button>
+                <mat-icon matTooltip="New with drawing">unarchive</mat-icon>
+            </button> 
+
+            <button mat-icon-button>
+                <mat-icon matTooltip="New with drawing">drag_indicator</mat-icon>
+            </button> 
+            <button mat-icon-button>
+                <mat-icon matTooltip="New with drawing">undo</mat-icon>
+            </button> 
+            <button mat-icon-button>
+                <mat-icon matTooltip="New with drawing">undo</mat-icon>
+            </button> 
+
+            <button mat-icon-button>
+                <mat-icon (click)="createNote()">close</mat-icon>
+            </button> 
+           
+          </div>
+        </mat-card-footer>
+
+    </mat-card>
+
+</div>

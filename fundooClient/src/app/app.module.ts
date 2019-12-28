@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import {MatCardModule,MatInputModule,MatButtonModule,MatFormFieldModule,MatToolbarModule,
         MatExpansionModule,MatTabsModule,MatCheckboxModule,MatIconModule, MatSelectModule,
@@ -23,7 +25,9 @@ import { InputFundooComponent } from './input-fundoo/input-fundoo.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashComponent } from './dash/dash.component';
+// import { DashComponent } from './dash/dash.component';
+import { DashhComponent } from './dashh/dashh.component';
+import { CreatenoteComponent } from './createnote/createnote.component';
 
 
 
@@ -33,7 +37,8 @@ import { DashComponent } from './dash/dash.component';
     AppComponent,
     LoginComponent,
     RegisterComponent, 
-    InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, DashboardComponent, DashComponent
+    InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, 
+    DashboardComponent, DashhComponent, CreatenoteComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,11 @@ import { DashComponent } from './dash/dash.component';
     MatSnackBarModule,
     MatSidenavModule,
     FlexLayoutModule,
-    MatListModule
+    MatListModule,
+    MDBBootstrapModule,
+    MatButtonToggleModule
+  
+    
   
     
   ],
