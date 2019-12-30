@@ -11,12 +11,12 @@
       <div class="img-icon" fxLayoutAlign="start center">
         <img class="img" src="../../assets/fundooLogo.png">
         <span fxHide.xs="true">{{titlename}}</span>
-        <span style="margin-left:1%;margin-top:4%;" *ngIf="titlename== null" fxHide.xs="true">FundooNotes</span>
+        <span style="margin-left:1%;margin-top:4%;" *ngIf="titlename== null" fxHide.xs="true">Fundoo Notes</span>
       </div>
     </div>
 
 
-    <div fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="60" fxFlex="60" class="search">
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="70" fxFlex="70" class="search">
       <!-- <form class="search"> -->
       <button mat-icon-button fxHide.xs="true">
         <mat-icon>search</mat-icon>
@@ -31,28 +31,57 @@
       </button>
     </div>
 
-    <!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
-      (click)="openDialog1()" (click)="getImage()">
-      <div>
-        <img mat-card-avatar class="profile1" src="http://localhost:4000/user/{{profilePic}}" />
-      </div>
-    </button> -->
 
-
-    <div fxLayout="row" fxLayoutAlign="center center" fxFlex="20"
-      fxLayoutGap="30px">
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlex="20" fxLayoutGap="30px">
       <button mat-icon-button fxHide.xs="true">
-      <mat-icon fxFlex="10" (click)="setGridAndListView()">icon</mat-icon>
-    </button>
+        <mat-icon fxFlex="10" (click)="setGridAndListView()">icon</mat-icon>
+      </button>
     </div>
 
-    <button mat-icon-button>
-      <div>
-        <img mat-card-avatar src="../../assets/download.jpeg" class="profile1"/>
-      </div>
-    </button> -
 
 
+
+    <div fxFlex="14" fxShow fxHide.xs fxShow fxHide.xs>
+      <button mat-icon-button style="margin-top:10px;margin-left: 100px; outline: none;" class="materialicons"
+        *ngIf=!list (click)=View() matTooltip="List view" fxShow="true">
+        <i class="material-icons">view_stream</i>
+      </button>
+      <button fxShow fxHide.xs fxShow fxHide.xs mat-icon-button
+        style="margin-top:10px;margin-left: 100px; outline: none;" *ngIf=list (click)=View() matTooltip="Grid view"
+        fxShow="true">
+        <i class="material-icons">view_module</i>
+      </button>
+    </div>
+
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <img mat-card-avatar src="{{ profilePicUser }}" class="profile1" />
+
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
+          <mat-card style="overflow: hidden">
+            <div class="image-container" style="padding-top: 50%;">
+              <img class="topic-avatar" mat-card-avatar src="{{ profilePicUser }}" (profilePic)="changeProfilePic()"
+                (click)="openSetProfileDialog()">
+            </div>
+       
+              <div class="name">{{fname}}</div>
+              <div class="email">{{email}}</div>
+            
+          </mat-card>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-around  center">
+          <button mat-raised-button (click)="logout()">Sign out</button>
+        </div>
+      </mat-menu>
+    </div>
+
+
+    
 
 
   </mat-toolbar>
@@ -122,7 +151,11 @@
       </mat-sidenav>
 
       <!-- <mat-sidenav-content> -->
-        <app-createnote></app-createnote>
+      <app-createnote></app-createnote>
+
+
+      <!-- <img height="42" width="42" [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> <br/>
+<input type='file' (change)="onSelectFile($event)"> -->
       <!-- </mat-sidenav-content> -->
     </mat-sidenav-container>
 
