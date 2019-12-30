@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -11,6 +11,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { DashhComponent } from './dashh/dashh.component';
 import { CreatenoteComponent } from './createnote/createnote.component';
+import { CardsComponent } from './cards/cards.component';
+
 
 
 
@@ -23,13 +25,13 @@ const routes: Routes = [
   {                                          // removed square bracket
     path: '',
     redirectTo: 'login',
-    pathMatch:'full'
-  }, 
+    pathMatch: 'full'
+  },
   {
     path: 'login',
     component: LoginComponent
   },
- 
+
   {
     path: 'register',
     component: RegisterComponent
@@ -50,17 +52,21 @@ const routes: Routes = [
     path: 'inputfundoo',
     component: InputFundooComponent
   },
-  
+
   {
     path: 'dashh',
     component: DashhComponent
   },
-  
+
   {
     path: 'createnote',
     component: CreatenoteComponent
+  }, 
+  {
+    path: 'cards',
+    component: CardsComponent
   }
-  
+
 ];
 
 
