@@ -18,7 +18,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import {MatCardModule,MatInputModule,MatButtonModule,MatFormFieldModule,MatToolbarModule,
         MatExpansionModule,MatTabsModule,MatCheckboxModule,MatIconModule, MatSelectModule,
-        MatSnackBarModule} from '@angular/material';
+        MatSnackBarModule,MatMenuModule} from '@angular/material';
 import {MatListModule} from '@angular/material/list';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { InputFundooComponent } from './input-fundoo/input-fundoo.component';
@@ -28,6 +28,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 // import { DashComponent } from './dash/dash.component';
 import { DashhComponent } from './dashh/dashh.component';
 import { CreatenoteComponent } from './createnote/createnote.component';
+import { CardsComponent } from './cards/cards.component';
 
 
 
@@ -38,7 +39,7 @@ import { CreatenoteComponent } from './createnote/createnote.component';
     LoginComponent,
     RegisterComponent, 
     InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, 
-    DashboardComponent, DashhComponent, CreatenoteComponent
+    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +50,7 @@ import { CreatenoteComponent } from './createnote/createnote.component';
     MatButtonModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatExpansionModule,MatTabsModule,MatCheckboxModule,MatIconModule,
+    MatExpansionModule,MatTabsModule,MatCheckboxModule,MatIconModule,MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
     ShowHidePasswordModule,
