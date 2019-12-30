@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-createnote',
@@ -8,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class CreatenoteComponent implements OnInit {
 
   constructor() { }
-
+  flag = false;
+  title=new FormControl('',[Validators.required,Validators.minLength(2)]);
+  description=new FormControl('',[Validators.required,Validators.minLength(2)]);
   ngOnInit() {
+  }
+
+  showNote() {
+
+    this.flag = !this.flag;
   }
 
 }
