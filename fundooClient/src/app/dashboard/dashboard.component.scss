@@ -39,6 +39,7 @@
      width: 78%; 
      border-radius: 8px; 
      margin-left: 57px;
+     
    
 }
 .input
@@ -62,3 +63,31 @@ input.input:focus {
 // {
 //     width:;
 // } 
+
+.image-container {
+    position: relative;
+    left:25%;
+    
+   
+  }
+  .topic-avatar {
+    width: 90px;
+    height: 90px;
+    align-self: center;
+    margin-top: -116px;
+    margin-left: -2px;
+    
+  }
+  .name{
+     
+      text-align: center;
+      padding-top: 9px;
+      font-size: x-large;
+      font-family: inherit;
+      padding-top: 1px;
+  }
+
+
+  
+
+
