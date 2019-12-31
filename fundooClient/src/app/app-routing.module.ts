@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashhComponent } from './dashh/dashh.component';
 import { CreatenoteComponent } from './createnote/createnote.component';
 import { CardsComponent } from './cards/cards.component';
+import { IconsComponent } from './icons/icons.component';
 
 
 
@@ -62,9 +63,13 @@ const routes: Routes = [
     path: 'createnote',
     component: CreatenoteComponent
   }, 
+ 
   {
-    path: 'cards',
-    component: CardsComponent
+  path:'icons',
+  component: IconsComponent
+  },{
+  path:'cards',
+  component: CardsComponent
   }
 
 ];

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-
+import { UserServiceService } from '../services/user-service.service';
 @Component({
   selector: 'app-createnote',
   templateUrl: './createnote.component.html',
@@ -8,16 +8,31 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class CreatenoteComponent implements OnInit {
 
-  constructor() { }
-  flag = false;
+  constructor(private userService:UserServiceService) { }
+  // flag = false;
+  card=false;
   title=new FormControl('',[Validators.required,Validators.minLength(2)]);
   description=new FormControl('',[Validators.required,Validators.minLength(2)]);
   ngOnInit() {
+   
   }
 
-  showNote() {
+  createNote() {
+    this.card=!this.card;
+    const data = {
+      "title": this.title.value,
+      "description": this.description.value
+    }
+   
+      this.userService.addNotes(data).subscribe(
+        response => {
 
-    this.flag = !this.flag;
+          console.log(response)
+          // this.card = !this.card;
+      
+        })
+
   }
+  
 
 }

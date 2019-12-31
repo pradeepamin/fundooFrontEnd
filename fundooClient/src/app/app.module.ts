@@ -29,6 +29,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashhComponent } from './dashh/dashh.component';
 import { CreatenoteComponent } from './createnote/createnote.component';
 import { CardsComponent } from './cards/cards.component';
+import { IconsComponent } from './icons/icons.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -39,7 +41,7 @@ import { CardsComponent } from './cards/cards.component';
     LoginComponent,
     RegisterComponent, 
     InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, 
-    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent
+    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, IconsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import { CardsComponent } from './cards/cards.component';
     FlexLayoutModule,
     MatListModule,
     MDBBootstrapModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatChipsModule
   
     
   

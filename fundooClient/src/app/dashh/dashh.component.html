@@ -1,0 +1,17 @@
+<mat-card class="getNotesMat" *ngFor="let note of getAllNote" [ngStyle]="{'background':note.colour}"  [ngClass]="{'abc':flag, 'xyz':!flag}" >
+   
+
+    
+        <div>
+            {{note.title}}
+        </div>
+        <div class="getNote_des">
+            {{note.description}}
+        </div>
+
+    
+    <div>
+        <app-icon-list [card]="note" [hiddenIcon]="hiddenIcon"></app-icon-list>
+    </div>
+</mat-card>
+

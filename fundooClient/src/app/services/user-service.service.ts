@@ -11,6 +11,7 @@ import { log } from 'util';
 export class UserServiceService {
   
   baseUrl = environment.baseUrl
+  noteUrl= environment.noteUrl
 
   constructor(private http: HttpClient) { }
 
@@ -36,5 +37,14 @@ export class UserServiceService {
     return this.http.post(this.baseUrl + 'login',{} )
   }
 
+
+  addNotes(data){
+    
+    return this.http.post(this.noteUrl +'addNote', data)
+  }
+
+  getAllNotes(){
+    return this.http.get(this.noteUrl + 'getAllNote',{})
+  }
 
 }

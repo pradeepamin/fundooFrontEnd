@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
     this.email=localStorage.getItem('emailUser');
     this.profilePicUser=localStorage.getItem('profilePicUser');
     
-    
+    this.getNotes()
 
   }
   logout()
@@ -33,22 +33,11 @@ export class DashboardComponent implements OnInit {
   console.log('User logout')
   this.router.navigate(['/login']);
 }
-
-
-// onSelectFile(event) {
-//   if (event.target.files && event.target.files[0]) {
-//     var reader = new FileReader();
-
-//     reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-//     reader.onload = (event) => { // called once readAsDataURL is completed
-//       this.url = event.target.result;
-//       console.log("LOGG-->",this.url);
-      
-//     }                                                                                                                                                       
-//   }
-// }
-
-
+getNotes(){
+  this.userService.getAllNotes().subscribe((res:any)=>{
+    console.log("REs of getall notes",res.data);
+    
+  })
+}
 
 }
