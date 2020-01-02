@@ -1,11 +1,34 @@
-<div fxLayout="{{message}}" fxLayoutGap="25px" class="cards">
+<div class="divClass">
 
-
-    <mat-card class="smallcard">
-        <div fxLayout="row" fxLayoutAlign="start start">
-            <img style="justify-content: center;" src="../../../assets/color.svg" class="mouseover">
+    <mat-card class="mat-card" *ngFor="let note of notes">
+      <div (click)="openDialog(note)">
+        <div class="textBrk">
+            {{note.title}}
         </div>
-    
+
+        <div class="textBrk">
+            {{note.description}}
+        </div>
+    </div>
+        <mat-card-actions>
+            <app-icons class="icons" [notesicon]="note"></app-icons>
+     
+        </mat-card-actions>
     </mat-card>
 </div>
-
+<!-- 
+<div class="divClass">
+    <mat-card class="mat-card" *ngFor="let note of notes">
+        <mat-card-header>
+            <mat-card-title>{{note.title}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{note.description}}
+                </mat-card-content>
+                
+                <mat-card-actions>
+                <app-icons></app-icons>
+                </mat-card-actions>
+    </mat-card>
+</div> 
+  -->

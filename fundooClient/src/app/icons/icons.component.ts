@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { NoteserviceService } from '../services/noteservice.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-icons',
@@ -6,11 +8,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
+  @Output() eventEmitter = new EventEmitter()
   colors: any;
-  constructor() { }
+  @Input() notesicon: any;
+
+  isArchived = true
+  constructor(private noteServices: NoteserviceService) { }
 
   ngOnInit() {
+    console.log(" notes in iconnnn-->", this.notesicon);
+
+
+
   }
+  archiveNote(card) {
+    console.log("IDD--->", card._id);
+    let cards = {
+      "noteId": card._id
+    }
+
+    this.noteServices.archiveNote(cards).subscribe(res => {
+      console.log("RES----------->", res);
+      this.eventEmitter.emit("");
+    })
+
+  }
+
+
+
+
+
+
+
+
 
   arrayOfColors = [
     [
@@ -34,3 +64,5 @@ export class IconsComponent implements OnInit {
   ]
 
 }
+
+

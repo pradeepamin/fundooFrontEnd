@@ -1,0 +1,12 @@
+<div>
+    <div>
+        <input matInput type="text" value="{{onenote.title}}" #title>
+
+    </div>
+    <div>
+        <input matInput type="text" value="{{onenote.description}}" #description>
+    </div>
+    <div>
+        <button type="submit" (click)="save(title.value,description.value,onenote._id)">SAVE</button>
+    </div>
+</div>

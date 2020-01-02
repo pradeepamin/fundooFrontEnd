@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import { log } from 'util';
+import { NoteserviceService } from '../services/noteservice.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -16,14 +17,14 @@ export class DashboardComponent implements OnInit {
   username;
   profilePicUser;
   url;
-  constructor(private userService:UserServiceService,private router:Router) { }
+  constructor(private userService:UserServiceService,private router:Router,private noteService:NoteserviceService) { }
 
   ngOnInit() {
     this.fname=localStorage.getItem('firstNameUser');
     this.email=localStorage.getItem('emailUser');
     this.profilePicUser=localStorage.getItem('profilePicUser');
     
-    this.getNotes()
+   
 
   }
   logout()
@@ -33,11 +34,6 @@ export class DashboardComponent implements OnInit {
   console.log('User logout')
   this.router.navigate(['/login']);
 }
-getNotes(){
-  this.userService.getAllNotes().subscribe((res:any)=>{
-    console.log("REs of getall notes",res.data);
-    
-  })
-}
+
 
 }

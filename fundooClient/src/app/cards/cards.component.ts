@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { EditnoteComponent } from '../editnote/editnote.component';
+import {MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-cards',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
+  @Input() notes:any;
 
-  constructor() { }
+
+  constructor(private dialog:MatDialog ) { }
+
 
   ngOnInit() {
+    console.log("notes in cards---->",this.notes);
+    
   }
+
+
+  
 
 }

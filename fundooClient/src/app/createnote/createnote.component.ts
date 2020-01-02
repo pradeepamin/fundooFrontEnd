@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from '../services/user-service.service';
+import { NoteserviceService } from '../services/noteservice.service';
+import { EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-createnote',
   templateUrl: './createnote.component.html',
@@ -8,9 +10,12 @@ import { UserServiceService } from '../services/user-service.service';
 })
 export class CreatenoteComponent implements OnInit {
 
-  constructor(private userService:UserServiceService) { }
-  // flag = false;
+  @Output() eventEmitter = new EventEmitter()
+
+  constructor(private noteService:NoteserviceService) { }
+
   card=false;
+
   title=new FormControl('',[Validators.required,Validators.minLength(2)]);
   description=new FormControl('',[Validators.required,Validators.minLength(2)]);
   ngOnInit() {
@@ -24,15 +29,17 @@ export class CreatenoteComponent implements OnInit {
       "description": this.description.value
     }
    
-      this.userService.addNotes(data).subscribe(
+      this.noteService.addNotes(data).subscribe(
         response => {
 
           console.log(response)
-          // this.card = !this.card;
-      
+          this.eventEmitter.emit("");
+          console.log("after emitting");
+          this.title.reset();
+          this.description.reset();
+        
         })
-
   }
-  
+
 
 }

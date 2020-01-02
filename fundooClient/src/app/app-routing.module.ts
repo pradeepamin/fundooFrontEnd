@@ -13,7 +13,7 @@ import { DashhComponent } from './dashh/dashh.component';
 import { CreatenoteComponent } from './createnote/createnote.component';
 import { CardsComponent } from './cards/cards.component';
 import { IconsComponent } from './icons/icons.component';
-
+import { MainnoteComponent } from './mainnote/mainnote.component';
 
 
 
@@ -45,10 +45,7 @@ const routes: Routes = [
     path: 'resetPassword/:token',
     component: ResetPasswordComponent
   },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
+  
   {
     path: 'inputfundoo',
     component: InputFundooComponent
@@ -70,7 +67,21 @@ const routes: Routes = [
   },{
   path:'cards',
   component: CardsComponent
-  }
+  },
+  // {
+  //   path: 'dashboard',component: DashboardComponent
+  // },
+
+  {
+    path: 'dashboard', component: DashboardComponent,
+    children: [{ path: 'mainnote', component: MainnoteComponent },
+    { // removed square bracket
+    path: '',
+    redirectTo: 'main',
+    pathMatch: 'full'
+    }
+    ]
+    }
 
 ];
 

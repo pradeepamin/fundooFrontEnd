@@ -32,6 +32,9 @@ import { CardsComponent } from './cards/cards.component';
 import { IconsComponent } from './icons/icons.component';
 import {MatChipsModule} from '@angular/material/chips';
 
+import { MainnoteComponent } from './mainnote/mainnote.component';
+import { EditnoteComponent } from './editnote/editnote.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -41,7 +44,7 @@ import {MatChipsModule} from '@angular/material/chips';
     LoginComponent,
     RegisterComponent, 
     InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, 
-    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, IconsComponent
+    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, IconsComponent, MainnoteComponent, EditnoteComponent
   ],
   imports: [
     BrowserModule,
@@ -65,12 +68,17 @@ import {MatChipsModule} from '@angular/material/chips';
     MatListModule,
     MDBBootstrapModule,
     MatButtonToggleModule,
-    MatChipsModule
-  
+    MatChipsModule,
+    MatDialogModule
     
   
-    
+
   ],
+
+entryComponents:[
+  EditnoteComponent
+],
+
   providers: [],
   bootstrap: [AppComponent]
 })
