@@ -1,0 +1,23 @@
+<!-- <app-cards [notes]="allArchiveNotes"></app-cards> -->
+
+
+    <div class="divClass">
+
+        <mat-card class="mat-card" *ngFor="let note of allArchiveNotes">
+          <div (click)="openDialog(note)">
+            <div class="textBrk">
+                {{note.title}}
+            </div>
+    
+            <div class="textBrk">
+                {{note.description}}
+            </div>
+        </div>
+            <mat-card-actions>
+                <button class="archive" mat-icon-button>
+                    <mat-icon class="img" (click)="unArchiveNote(note)">unarchive</mat-icon>
+                </button>
+               
+            </mat-card-actions>
+        </mat-card>
+    </div>

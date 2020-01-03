@@ -25,4 +25,36 @@ export class NoteserviceService {
   archiveNote(card){
     return this.httpNoteService.put(this.noteUrl+ 'archiveNote', card)
   }
+
+  archiveGet(){
+    return this.httpNoteService.get(this.noteUrl+ 'getArchiveNote',{})
+
+  }
+
+  
+  deleteNote(card1){
+    
+    
+    return this.httpNoteService.put(this.noteUrl+ 'deleteNote', card1)
+  }
+  
+
+  deleteGet(){
+    return this.httpNoteService.get(this.noteUrl+ 'getDeleteNote',{})
+
+  }
+
+  unArchive(unArch){
+    console.log("carddd in servcie",unArch);
+    return this.httpNoteService.put(this.noteUrl+ 'unarchiveNote', unArch)
+  
+  } 
+  unDelete(unDel){
+    console.log("carddd in servcie",unDel);
+    return this.httpNoteService.put(this.noteUrl+ 'unDeleteNote', unDel)
+  
+  }
+
+
+
 }

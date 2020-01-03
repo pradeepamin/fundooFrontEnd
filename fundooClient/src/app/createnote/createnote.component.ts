@@ -24,11 +24,16 @@ export class CreatenoteComponent implements OnInit {
 
   createNote() {
     this.card=!this.card;
+    if(this.title.value==null || this.description.value==null){
+      console.log("no notes added");
+      return
+    }
+    else{
     const data = {
       "title": this.title.value,
       "description": this.description.value
     }
-   
+
       this.noteService.addNotes(data).subscribe(
         response => {
 
@@ -37,9 +42,8 @@ export class CreatenoteComponent implements OnInit {
           console.log("after emitting");
           this.title.reset();
           this.description.reset();
-        
         })
   }
-
+  }
 
 }

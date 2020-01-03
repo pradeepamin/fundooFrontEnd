@@ -1,0 +1,47 @@
+// .smallcard
+// {
+//     width: 267px;
+//     height: 143px;
+//     margin-top: 34px;
+//     border-radius: 1px;
+//     box-shadow: 1px 5px 10px grey;
+//     // padding: 100px 0 0;
+// }
+
+// .cards{
+//     padding-left: 100px;
+//     padding-right: 100px
+// }
+
+.divClass{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex start;
+    margin-left: 15%;
+    margin-top: 3%;
+    }
+    
+    .mat-card {
+    background-color: white;
+    /* left: 30%; */
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px #cec9c9;
+    min-width: 260px;
+    margin-right: 2%;
+    max-width: 25%;
+    /* top: 20px; */
+    margin-bottom: 1%;
+    word-break: break-all;
+    }
+    .textBrk{
+        word-break: break-all;
+        padding: 9px;
+    }
+    .icons{
+        visibility: hidden;
+        opacity: 0;
+    }
+    .mat-card :hover .icons{
+        visibility: visible;
+        opacity: 1;
+    }

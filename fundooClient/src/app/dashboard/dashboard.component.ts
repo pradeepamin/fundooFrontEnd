@@ -23,9 +23,6 @@ export class DashboardComponent implements OnInit {
     this.fname=localStorage.getItem('firstNameUser');
     this.email=localStorage.getItem('emailUser');
     this.profilePicUser=localStorage.getItem('profilePicUser');
-    
-   
-
   }
   logout()
 {
@@ -34,6 +31,14 @@ export class DashboardComponent implements OnInit {
   console.log('User logout')
   this.router.navigate(['/login']);
 }
+getArchiveNote(){
+  this.router.navigate(['/dashboard/archivenote']);
+}
 
-
+notes(){
+  this.router.navigate(['/dashboard/mainnote']);
+}
+trash(){
+  this.router.navigate(['/dashboard/trash']);
+}
 }

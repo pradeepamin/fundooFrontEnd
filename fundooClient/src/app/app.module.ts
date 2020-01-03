@@ -35,7 +35,9 @@ import {MatChipsModule} from '@angular/material/chips';
 import { MainnoteComponent } from './mainnote/mainnote.component';
 import { EditnoteComponent } from './editnote/editnote.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { ArchivenoteComponent } from './archivenote/archivenote.component';
+import { TrashComponent } from './trash/trash.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -44,7 +46,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     LoginComponent,
     RegisterComponent, 
     InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, 
-    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, IconsComponent, MainnoteComponent, EditnoteComponent
+    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, IconsComponent, MainnoteComponent, EditnoteComponent, ArchivenoteComponent, TrashComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MDBBootstrapModule,
     MatButtonToggleModule,
     MatChipsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
     
   
 

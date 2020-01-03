@@ -1,6 +1,6 @@
 <div class="divClass">
 
-    <mat-card class="mat-card" *ngFor="let note of notes">
+    <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="'yellow'">
       <div (click)="openDialog(note)">
         <div class="textBrk">
             {{note.title}}
@@ -11,7 +11,7 @@
         </div>
     </div>
         <mat-card-actions>
-            <app-icons class="icons" [notesicon]="note"></app-icons>
+            <app-icons class="icons" [notesicon]="note" (afterUpdateevent)="afterUpdate($event)"></app-icons>
      
         </mat-card-actions>
     </mat-card>
