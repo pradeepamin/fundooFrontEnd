@@ -17,7 +17,7 @@ export class MainnoteComponent implements OnInit {
   }
   getNotes(){
     this.noteService.getAllNotes().subscribe((res:any)=>{
-      // console.log("REs of getall notes",res.data);
+       console.log("REs of getall notes",res.data);
       this.allNotes=res.data;
       
     })

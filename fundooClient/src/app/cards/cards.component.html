@@ -1,7 +1,8 @@
 <div class="divClass">
 
-    <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="'yellow'">
-      <div (click)="openDialog(note)">
+    <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="note.noteColor">
+       <div (click)="openDialog(note)" > 
+
         <div class="textBrk">
             {{note.title}}
         </div>

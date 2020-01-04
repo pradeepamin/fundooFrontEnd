@@ -24,7 +24,7 @@ export class CreatenoteComponent implements OnInit {
 
   createNote() {
     this.card=!this.card;
-    if(this.title.value==null || this.description.value==null){
+    if ((this.title.value == null || this.title.value == '') && (this.description.value == null || this.description.value == '')){
       console.log("no notes added");
       return
     }

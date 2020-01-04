@@ -1,21 +1,9 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
-    <button mat-icon-button>
+    <button mat-icon-button (click)="dialogCol()">
         <img style="width:20px; height: 20px;" src="../../assets/collaborator.svg" matTooltip="colaborator"
             (click)="dialogCol()">
     </button>
 
-    <!-- <button mat-icon-button matTooltip="Change color" >
-        <img style="width: 20px;height: 20px;" src="../../../assets/color.svg" style="margin-left: 16px;">
-    </button> -->
-
-    <!-- <button class="menu"  mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Set color">
-        <mat-icon class="color">palette</mat-icon>
-        <mat-menu #menu="matMenu">
-               <div *ngFor="let color of colors">
-               
-               </div>
-           </mat-menu>
-   </button> -->
 
     <button mat-icon-button matTooltip="Change color" [matMenuTriggerFor]="colorlist">
         <img style="width: 12px;height: 12px;" src="../../../assets/color.svg" style="margin-left: 16px;">
@@ -36,11 +24,6 @@
     </mat-menu>
 
    
-
-
-
-
-
 
 
     <button mat-icon-button>

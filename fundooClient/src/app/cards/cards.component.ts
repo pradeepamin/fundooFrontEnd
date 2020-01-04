@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output ,EventEmitter} from '@angular/core';
 import { EditnoteComponent } from '../editnote/editnote.component';
-import {MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
+import {MatDialog, MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
 
 
 @Component({
@@ -11,19 +11,27 @@ import {MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
 export class CardsComponent implements OnInit {
   @Input() notes:any; //recvies from parent mainComponent
   @Output() afterUpdateEvent= new EventEmitter();
+  // @Output() colorEvent= new EventEmitter();
 
-
-  constructor(private dialog:MatDialog ) { }
+  constructor(private dialog: MatDialog) {}
 
 
   ngOnInit() {
-    //console.log("notes in cards---->",this.notes);
+ 
+    
     
   }
   afterUpdate($event){
      this.afterUpdateEvent.emit("");
   }
+  openDialog(note) {
+    console.log("Nottes to eddiit-->",note);
 
+    const dialogRef=this.dialog.open(EditnoteComponent,{
+      data:{note}
+    })
+    
+
+  }
   
-
 }

@@ -3,7 +3,7 @@
 
     <div class="divClass">
 
-        <mat-card class="mat-card" *ngFor="let note of allArchiveNotes">
+        <mat-card class="mat-card" *ngFor="let note of allArchiveNotes" [style.backgroundColor]="note.noteColor">
           <div (click)="openDialog(note)">
             <div class="textBrk">
                 {{note.title}}

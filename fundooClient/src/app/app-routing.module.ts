@@ -16,6 +16,7 @@ import { IconsComponent } from './icons/icons.component';
 import { MainnoteComponent } from './mainnote/mainnote.component';
 import { ArchivenoteComponent } from './archivenote/archivenote.component';
 import { TrashComponent } from './trash/trash.component';
+import { CollaboratorComponent } from './collaborator/collaborator.component';
 
 
 
@@ -70,7 +71,11 @@ const routes: Routes = [
    {
     path: 'cards',
     component: CardsComponent
+  },{
+    path: 'collaborator',
+    component: CollaboratorComponent
   },
+   
   // {
   //   path: 'archivenote',component: ArchivenoteComponent TrashComponent
   // },

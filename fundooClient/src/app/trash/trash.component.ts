@@ -27,7 +27,7 @@ export class TrashComponent implements OnInit {
     }
     this.noteService.unDelete(unDel).subscribe(res => {
       console.log("RES---unDelete-------->", res);
-      //  this.afterUpdateEvent.emit("true");
+   
       this.getAllDeleteNotes()
     })
     

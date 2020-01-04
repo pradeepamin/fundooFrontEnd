@@ -9,6 +9,8 @@ export class NoteserviceService {
   constructor(private httpNoteService: HttpClient) { }
 
   addNotes(data){
+    console.log("data-->",data);
+    
     
     return this.httpNoteService.post(this.noteUrl +'addNote', data)
   }
@@ -18,9 +20,6 @@ export class NoteserviceService {
     return this.httpNoteService.get(this.noteUrl + 'getAllNote',{})
   }
 
-  updateNote(data){
-    return this.httpNoteService.put(this.noteUrl+ 'updateNote',data)
-  }
 
   archiveNote(card){
     return this.httpNoteService.put(this.noteUrl+ 'archiveNote', card)
@@ -50,11 +49,22 @@ export class NoteserviceService {
   
   } 
   unDelete(unDel){
-    console.log("carddd in servcie",unDel);
-    return this.httpNoteService.put(this.noteUrl+ 'unDeleteNote', unDel)
   
+    return this.httpNoteService.put(this.noteUrl+ 'unDeleteNote', unDel)
+   
+  } 
+
+  colNote(col){
+    console.log("carddd in servcie",col);
+    return this.httpNoteService.post(this.noteUrl+ 'noteColor', col)
+   
   }
+  
 
-
+  updateNote(editNote){
+    console.log("carddd in servcie",editNote);
+    return this.httpNoteService.put(this.noteUrl+ 'updateNote', editNote)
+   
+  }
 
 }

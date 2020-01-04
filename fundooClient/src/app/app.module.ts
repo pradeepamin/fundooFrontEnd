@@ -38,6 +38,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ArchivenoteComponent } from './archivenote/archivenote.component';
 import { TrashComponent } from './trash/trash.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { CollaboratorComponent } from './collaborator/collaborator.component';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     LoginComponent,
     RegisterComponent, 
     InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, 
-    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, IconsComponent, MainnoteComponent, EditnoteComponent, ArchivenoteComponent, TrashComponent
+    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, IconsComponent, MainnoteComponent, EditnoteComponent, ArchivenoteComponent, TrashComponent, CollaboratorComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +80,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   ],
 
 entryComponents:[
-  EditnoteComponent
+  EditnoteComponent,
+  CollaboratorComponent
 ],
 
   providers: [],

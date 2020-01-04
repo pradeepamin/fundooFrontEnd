@@ -8,8 +8,7 @@ import { NoteserviceService } from '../services/noteservice.service';
 })
 export class ArchivenoteComponent implements OnInit {
   allArchiveNotes:any;
-  @Output() afterUpdateEvent = new EventEmitter()
-
+  
   constructor(private noteService:NoteserviceService) { }
 
   ngOnInit() {

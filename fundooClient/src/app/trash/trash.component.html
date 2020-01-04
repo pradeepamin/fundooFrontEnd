@@ -2,7 +2,7 @@
 
 <div class="divClass">
 
-    <mat-card class="mat-card" *ngFor="let note of alldeletedNotes">
+    <mat-card class="mat-card" *ngFor="let note of alldeletedNotes" [style.backgroundColor]="note.noteColor">
       <div (click)="openDialog(note)">
         <div class="textBrk">
             {{note.title}}

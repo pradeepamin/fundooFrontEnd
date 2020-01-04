@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { NoteserviceService } from '../services/noteservice.service';
 import { EventEmitter } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
+
 
 @Component({
   selector: 'app-icons',
@@ -9,12 +12,12 @@ import { EventEmitter } from '@angular/core';
 })
 export class IconsComponent implements OnInit {
   @Output() afterUpdateevent = new EventEmitter()
-  
+
   @Input() notesicon: any;
 
   isArchived = true
-  
-  constructor(private noteServices: NoteserviceService) { }
+
+  constructor(private noteServices: NoteserviceService,private dialog: MatDialog) { }
 
   ngOnInit() {
     // console.log(" notes in iconnnn-->", this.notesicon);
@@ -33,7 +36,7 @@ export class IconsComponent implements OnInit {
     })
   }
 
-  DeleteNote(card){
+  DeleteNote(card) {
     console.log("IDD---for delete>", card._id);
     let note1 = {
       "userId": card._id
@@ -44,18 +47,42 @@ export class IconsComponent implements OnInit {
     })
   }
 
-  setColor(color,note){
-console.log("Color---->",color,note);
+  setColor(color, note) {
+    console.log("Color---->", color, note);
+    let col={
+    "noteId": color,
+    "noteColor": note
+    }
+    this.noteServices.colNote(col).subscribe(res => {
 
+      console.log("Resssponse backk---->");
+      
+      console.log("RES---colorNote-------->", res);
+      this.afterUpdateevent.emit("true");
+    })
   }
+  dialogCol(): void {
+    
+    console.log("Note id in colab111111--->",this.notesicon._id);
+    
+    
+    const dialogRef = this.dialog.open(CollaboratorComponent, {
+      width: '450px',
+      height: '250px',
+      // data: {id: this.notesicon._id,}
+      // data:{this.notesicon._id}
 
-   
+    });
+  }
+  
+
+
 
   arrayOfColors = [
     [
       { color: "rgb(247, 86, 118)", name: "pink" },
       { color: "darkgoldenrod", name: "darkGolden" },
-      { color: "olive", name: "olive" }
+      { color: "white", name: "white" }
     ],
     [
       { color: "slategray", name: "grey" },
@@ -70,5 +97,7 @@ console.log("Color---->",color,note);
   ]
 
 }
+
+
 
 

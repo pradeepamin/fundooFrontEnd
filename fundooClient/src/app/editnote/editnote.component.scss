@@ -1,0 +1,87 @@
+
+
+// .divClass{
+//     display: flex;
+//     flex-flow: row wrap;
+//     align-items: flex start;
+//     margin-left: 10%;
+//     margin-top: 10%;
+//     align-items: center;
+//     overflow-x: hidden;
+//     }
+    
+//     .mat-card {
+//     background-color: white;
+//     /* left: 30%; */
+//     border-radius: 8px;
+//     box-shadow: 1px 1px 1px 1px #cec9c9;
+//     min-width: 260px;
+//     margin-right: 2%;
+//     max-width: 75%;
+//     /* top: 20px; */
+//     margin-bottom: 1%;
+//     word-break: break-all;
+//     overflow-x: hidden;
+//     }
+//     .textBrk{
+//         word-break: break-all;
+//         padding: 9px;
+//     }
+//     .icons{
+//         visibility: hidden;
+//         opacity: 0;
+//     }
+//     .mat-card :hover .icons{
+//         visibility: visible;
+//         opacity: 1;
+//     }
+
+
+
+
+
+  
+    
+    .secondcard{
+        margin-top: 2%;
+        width: 530px;
+        padding: 5px;
+        padding-left: 4px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgb(184, 181, 181);
+    }
+    
+    
+    
+    .input{
+        margin-top: 10px;
+        width: 50%;
+        height: 23px;
+        font-size: large;
+        outline: none;
+        border: none;
+        white-space: initial;
+        width: 125px;
+        word-wrap: break-word;
+        padding-left: 9px;
+    }
+    
+    .title{
+     
+            margin-top: 10px;
+            height: 25px;
+            font-size: large;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            background-color: transparent;
+            width: 350px;
+            word-wrap: break-word;
+            padding-left: 9px;
+    
+    }
+    .btnClose{
+        padding-left: 20px;
+    margin-left: 95px;
+    }
+  
