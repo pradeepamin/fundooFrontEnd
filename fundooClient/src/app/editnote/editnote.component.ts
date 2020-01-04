@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component, OnInit, Inject,Output ,EventEmitter} from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { identifierModuleUrl } from '@angular/compiler';
 import { NoteserviceService } from '../services/noteservice.service';
 
@@ -10,28 +10,39 @@ import { NoteserviceService } from '../services/noteservice.service';
 })
 export class EditnoteComponent implements OnInit {
   onenote:any;
-  title:string;
-  description:string;
-  constructor(@Inject(MAT_DIALOG_DATA) private data,private noteservice:NoteserviceService) { 
-    this.onenote=this.data.note;
+  @Output() afterUpdateevent = new EventEmitter()
+
+  title:any="";
+  description:any="";
  
-    
-    
+  constructor(private dialog:MatDialog, @Inject(MAT_DIALOG_DATA) private data,private noteservice:NoteserviceService) { 
+    this.onenote=this.data.note;
+   
   }
 
   ngOnInit() {
   }
   save(_id,title,description){
-  const newData={
-    "_id":_id,
-    "title":title,
+    console.log("titt,,dess-->",_id,title,description);
+   const editData={
+     "_id":_id,
+     "title":title,
     "description":description
-  }
-  this.noteservice.updateNote(newData).subscribe(res=>{
-    console.log("RES update--->",res);
-    
+   }
+   console.log(editData,"after editing");
+   this.noteservice.updateNote(editData).subscribe(res=>{
+       console.log("RES edit update--->",res);
+       this.afterUpdateevent.emit("");
+       this.closeDialog();
+      
   })
-  
-}
+  }
+
+  closeDialog(){
+    this.dialog.closeAll();
+  }
+
 
 }
+
+
