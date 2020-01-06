@@ -39,7 +39,7 @@ import { ArchivenoteComponent } from './archivenote/archivenote.component';
 import { TrashComponent } from './trash/trash.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
-
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -73,8 +73,9 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
     MatButtonToggleModule,
     MatChipsModule,
     MatDialogModule,
-    MatTooltipModule
-    
+    MatTooltipModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule
   
 
   ],

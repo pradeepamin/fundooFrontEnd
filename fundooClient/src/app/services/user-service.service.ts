@@ -37,7 +37,9 @@ export class UserServiceService {
     return this.http.post(this.baseUrl + 'login',{} )
   }
 
-
+  getusers(){
+    return this.http.get(this.baseUrl + 'getAllUser',{} )
+  }
   
 
 }

@@ -20,7 +20,7 @@ export class IconsComponent implements OnInit {
   constructor(private noteServices: NoteserviceService,private dialog: MatDialog) { }
 
   ngOnInit() {
-    // console.log(" notes in iconnnn-->", this.notesicon);
+     console.log(" notes in iconnnn-->", this.notesicon);
 
   }
 
@@ -62,15 +62,14 @@ export class IconsComponent implements OnInit {
     })
   }
   dialogCol(): void {
-    
     console.log("Note id in colab111111--->",this.notesicon._id);
     
     
     const dialogRef = this.dialog.open(CollaboratorComponent, {
       width: '450px',
       height: '250px',
-      // data: {id: this.notesicon._id,}
-      // data:{this.notesicon._id}
+      
+      data:{noteId:this.notesicon._id}
 
     });
   }

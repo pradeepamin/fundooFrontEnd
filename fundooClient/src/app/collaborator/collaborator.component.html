@@ -1,16 +1,33 @@
 
+<div class="dialogg">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span style="font-size:large; font-family: inherit">Collaborators</span>
+    </div>
+    <mat-divider></mat-divider>
+    <div style="height:64px"  fxLayout="row" fxLayoutAlign="start center">
+      <div>
+      <img mat-card-avatar src="{{ profilePicUser }}"/>
+      </div>
+      <div>
+      <div  fxLayout="row" fxLayoutAlign="start start" fxLayoutGap=6px>
+      <div>{{fname}}(owner)</div>
+    </div>
+      <div>{{email}}</div>
+      </div>
+    </div>
+    <div *ngFor="let item of getCollab">
+        <div  fxLayout="row" fxLayoutAlign="start center" >
+        <div >
+            <button mat-mini-fab> {{ item.firstName | slice:0:1}}</button> 
+           </div>
+           <div>
+        <div  fxLayout="row" fxLayoutAlign="start start" fxLayoutGap=6px style=" width: 356px;">
+            <div>{{item.firstName}}</div><div>{{item.lastName}}</div>
+          </div>
+      <div>{{item.email}}</div>
+      </div>
+      <div><button mat-icon-button><mat-icon (click)="removeColab(item)">clear</mat-icon></button></div>
+    </div>
+  </div>
 
-    <mat-card class="mat-card">
-       
-
-        <div class="textBrk">
-         <p>hhii</p>
-        </div>
-
-        <div class="textBrk">
-           
-        </div>
-
-       
-    </mat-card>
 

@@ -67,4 +67,12 @@ export class NoteserviceService {
    
   }
 
+  getCollab(noteId){
+    console.log("note id in service---->>",noteId);
+    
+    return this.httpNoteService.get(this.noteUrl+ 'getCollaborator', noteId )
+  }
+
+
+
 }
