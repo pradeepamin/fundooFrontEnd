@@ -45,20 +45,16 @@ onenote:any;
 
   getAllColl(){
     console.log("note ffffffffffff:",this.onenote.noteId);
-    let a={
+    let noteId={
       "noteId":this.onenote.noteId
     }
-    this.noteService.getCollab(a).subscribe(res => {
-      console.log("Getting all users--->", res);
-    
-    
+    this.noteService.getCollab(noteId).subscribe((res:any) => {
+      console.log("Getting all collab users--->", res);
+  
     })
   }
 
   
-
-
-
 
 
 }

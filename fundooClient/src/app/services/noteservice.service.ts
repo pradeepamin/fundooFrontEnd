@@ -49,6 +49,8 @@ export class NoteserviceService {
   
   } 
   unDelete(unDel){
+    console.log("Delete in service-->",unDel);
+    
   
     return this.httpNoteService.put(this.noteUrl+ 'unDeleteNote', unDel)
    
@@ -67,12 +69,14 @@ export class NoteserviceService {
    
   }
 
+
   getCollab(noteId){
     console.log("note id in service---->>",noteId);
-    
-    return this.httpNoteService.get(this.noteUrl+ 'getCollaborator', noteId )
+    return this.httpNoteService.post(this.noteUrl+ 'getCollaborator', noteId)
+
   }
 
+ 
 
 
 }
