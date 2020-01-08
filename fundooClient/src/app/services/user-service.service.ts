@@ -37,6 +37,19 @@ export class UserServiceService {
     return this.http.post(this.baseUrl + 'login',{} )
   }
 
+  uploadProfilePic(file,image){
+    console.log("File and imagee-->",file,image);
+
+    let formdata: FormData = new FormData();
+    formdata.append('image',image);
+
+    const formData = new FormData();
+
+  console.log("Form dattta--->",formData);
+  
+
+    return this.http.post(this.baseUrl + 'imageUpload', formData)
+  }
   
   
 
