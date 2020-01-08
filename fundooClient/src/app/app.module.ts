@@ -41,6 +41,8 @@ import { TrashComponent } from './trash/trash.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { BehaviorSubject } from 'rxjs';
+
 
 @NgModule({
   declarations: [
@@ -77,7 +79,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     MatTooltipModule,
     OwlDateTimeModule, 
     OwlNativeDateTimeModule
-  
+    
 
   ],
 
