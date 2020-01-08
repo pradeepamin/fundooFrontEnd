@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
     this.fname=localStorage.getItem('firstNameUser');
     this.email=localStorage.getItem('emailUser');
     this.profilePicUser=localStorage.getItem('profilePicUser');
+    this.uploadPic();
   }
   logout()
 {
@@ -41,4 +42,23 @@ notes(){
 trash(){
   this.router.navigate(['/dashboard/trash']);
 }
+
+selectedFile:any;
+img:any='image'
+onFileSelected(event){
+  console.log("Evvent to upolad image--",event.target.files[0].name);
+  this.selectedFile=event.target.files[0].name;
+  
+}
+
+uploadPic(){
+  
+    console.log("pic data-->", this.selectedFile);
+    this.userService.uploadProfilePic(this.selectedFile,this.img).subscribe((res: any) => {
+      console.log("Getting all collab users--->", res);
+
+    })
+  }
+
+
 }
