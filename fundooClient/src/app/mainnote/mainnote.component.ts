@@ -13,12 +13,25 @@ export class MainnoteComponent implements OnInit {
 
   ngOnInit() {
     this.getNotes()
+    this.getCollabNotes()
   //  this.afterAdding(event)
   }
   getNotes(){
     this.noteService.getAllNotes().subscribe((res:any)=>{
        console.log("REs of getall notes",res.data);
       this.allNotes=res.data;
+      
+    })
+  }
+  getCollabNotes(){
+    this.noteService.getAllCollabNotes().subscribe((res:any)=>{
+       console.log("REs of geetting all collab notes notes",res.data);
+     for(let i of res.data){
+       
+      console.log("dddddddd",i.noteId);
+      this.allNotes.push(i.noteId)
+      
+     }
       
     })
   }
