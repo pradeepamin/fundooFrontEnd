@@ -18,8 +18,11 @@ export class NoteserviceService {
   getAllNotes(){
 
     return this.httpNoteService.get(this.noteUrl + 'getAllNote',{})
-  }
+  } 
+  getAllCollabNotes(){
 
+    return this.httpNoteService.get(this.noteUrl + 'getCollaboratorNote',{})
+  }
 
   archiveNote(card){
     return this.httpNoteService.put(this.noteUrl+ 'archiveNote', card)
@@ -71,12 +74,24 @@ export class NoteserviceService {
 
 
   getCollab(noteId){
-    console.log("note id in service---->>",noteId);
+    console.log("note id get all coll service---->>",noteId);
     return this.httpNoteService.post(this.noteUrl+ 'getCollaborator', noteId)
 
   }
-
  
+    
+  DeleteCollaborator(deleteCollab){
+    console.log("data-form service to delete collab->",deleteCollab);
+    
+    
+    return this.httpNoteService.put(this.noteUrl+ 'deleteCollaborator', deleteCollab)
+  }
 
 
+
+  addCollaborator(addColl){
+    console.log("add collab id in service---->>",addColl);
+    return this.httpNoteService.post(this.noteUrl+ 'addCollaborator', addColl)
+  }
+ 
 }
