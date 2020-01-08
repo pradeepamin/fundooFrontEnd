@@ -13,7 +13,7 @@ import { CollaboratorComponent } from '../collaborator/collaborator.component';
 export class IconsComponent implements OnInit {
   @Output() afterUpdateevent = new EventEmitter()
 
-  @Input() notesicon: any;
+  @Input() notesicon: any;  //gets data from parent cards
 
   isArchived = true
 
@@ -66,17 +66,13 @@ export class IconsComponent implements OnInit {
     
     
     const dialogRef = this.dialog.open(CollaboratorComponent, {
-      width: '450px',
-      height: '250px',
-      
+      width: '490px',
+      height: '290px',
       data:{noteId:this.notesicon._id}
-
     });
+    
   }
   
-
-
-
   arrayOfColors = [
     [
       { color: "rgb(247, 86, 118)", name: "pink" },
