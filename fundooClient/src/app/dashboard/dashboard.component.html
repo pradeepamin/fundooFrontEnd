@@ -54,6 +54,7 @@
     <div>
       <button mat-icon-button [matMenuTriggerFor]="menu">
         <img mat-card-avatar src="{{ profilePicUser }}" class="profile1" />
+        
 
       </button>
 
@@ -64,7 +65,8 @@
               <img class="topic-avatar" mat-card-avatar src="{{ profilePicUser }}" (profilePic)="changeProfilePic()"
                 (click)="openSetProfileDialog()">
             </div>
-       
+            <input type="file" (change)="onFileSelected($event)">
+            <input type="button" (click)="uploadPic()"Upload>
               <div class="name">{{fname}}</div>
               <div class="email">{{email}}</div>
             
