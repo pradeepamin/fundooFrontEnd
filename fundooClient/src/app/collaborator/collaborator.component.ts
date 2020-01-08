@@ -2,59 +2,104 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { UserServiceService } from '../services/user-service.service';
 import { NoteserviceService } from '../services/noteservice.service';
+import { FormGroup, FormControl } from '@angular/forms';
+import { DataService } from '../services/data.service';
+
 @Component({
   selector: 'app-collaborator',
   templateUrl: './collaborator.component.html',
   styleUrls: ['./collaborator.component.scss']
 })
 export class CollaboratorComponent implements OnInit {
-onenote:any;
-  fname:any;
-  email:any;
-  profilePicUser:any;
-  getCollab: any;
- 
- 
-  constructor(private noteService: NoteserviceService , @Inject(MAT_DIALOG_DATA) public data: any) {   
-    this.onenote=this.data;
-    console.log("note id:",this.onenote);
+  onenote: any;
+  fname: any;
+  email: any;
+  profilePicUser: any;
+  fruits: Array<string>;
+  collarr: any;
+  
+  
+  
+  email1 = new FormControl();
+  message:string;
+  constructor(private noteService: NoteserviceService, @Inject(MAT_DIALOG_DATA) public data: any,private dataService:DataService) {
+    this.onenote = this.data;
+    console.log("note id:", this.onenote);
   }
 
-  
   ngOnInit() {
-    this.fname=localStorage.getItem('firstNameUser');
-    this.email=localStorage.getItem('emailUser');
-    this.profilePicUser=localStorage.getItem('profilePicUser');
+    this.fname = localStorage.getItem('firstNameUser');
+    this.email = localStorage.getItem('emailUser');
+    this.profilePicUser = localStorage.getItem('profilePicUser');
     this.getAllColl();
-
+   
   }
 
-
-    // let colId={
-    //   "noteId":this.onenote
-    // }
-    // console.log("NOttte in array-->",colId);
-    
-    
-  //   this.noteService.getCollab(a).subscribe((res:any)=>{
-  //      console.log("Getting all users--->",res.data);
-  //      this.getCollab=res.data;
-      
-  //   })
-  // }
-
-  getAllColl(){
-    console.log("note ffffffffffff:",this.onenote.noteId);
-    let noteId={
-      "noteId":this.onenote.noteId
-    }
-    this.noteService.getCollab(noteId).subscribe((res:any) => {
-      console.log("Getting all collab users--->", res);
+ 
   
+  getAllColl() {
+    console.log("note ffffffffffff:", this.onenote.noteId);
+    let noteId = {
+      "noteId": this.onenote.noteId
+    }
+    this.noteService.getCollab(noteId).subscribe((res: any) => {
+      console.log("Getting all collab users--->", res.data.collaboratorUsers);
+      let res2 = res.data.collaboratorUsers;
+      let UserDetailsArray = [];
+
+      let collabUserDetails: any;
+      console.log("Datata sorting--->", res2);
+      res2.forEach((ele => {
+        console.log("elelele", ele._id.firstName, ele._id.lastName);
+        collabUserDetails = {
+          fname: ele._id.firstName,
+          lname: ele._id.lastName,
+          email: ele._id.email
+        }
+        UserDetailsArray.push(collabUserDetails);
+      }))
+      console.log("collab user details->", collabUserDetails);
+      console.log("collab user details->", UserDetailsArray);
+      this.collarr = UserDetailsArray;
+      this.fruits=UserDetailsArray;
+      for (var key of UserDetailsArray) {
+        console.log(key.email);
+      }
+    })
+  }
+  
+  
+
+
+ 
+  removeColab(item) {
+
+    let deleteCollab = {
+      "noteId": this.onenote.noteId,
+      "collaboratorId": item.email
+    }
+    console.log("Delete data-->", deleteCollab);
+    this.noteService.DeleteCollaborator(deleteCollab).subscribe((res: any) => {
+      console.log("Getting all collab users--->", res);
+      let i = this.collarr.indexOf(item)
+      this.collarr.splice(i, 1)
     })
   }
 
-  
+
+  writeEmail() {
+    let addColl = {
+      "noteId": this.onenote.noteId,
+      "collaboratorId": this.email1.value
+    }
+    console.log("Add coll-->", addColl);
+    this.noteService.addCollaborator(addColl).subscribe((res: any) => {
+      console.log("Getting all collab users--->", res);
+
+    })
+  }
+
+
 
 
 }
