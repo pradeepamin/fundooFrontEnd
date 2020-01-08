@@ -24,9 +24,9 @@ export class CardsComponent implements OnInit {
   afterUpdate($event){
      this.afterUpdateEvent.emit("");
   }
+  //thi function is for edit and update
   openDialog(note) {
     console.log("Nottes to eddiit-->",note);
-
     const dialogRef=this.dialog.open(EditnoteComponent,{
       data:{note}
     })
