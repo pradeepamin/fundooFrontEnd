@@ -56,7 +56,7 @@
         <img mat-card-avatar src="{{ profilePicUser }}" class="profile1" />
         
 
-      </button>
+      </button>                                                                                                 
 
       <mat-menu #menu="matMenu">
         <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
@@ -66,11 +66,12 @@
                 (click)="openSetProfileDialog()">
             </div>
             <input type="file" (change)="onFileSelected($event)">
-            <input type="button" (click)="uploadPic()"Upload>
-              <div class="name">{{fname}}</div>
+            <button mat-button (click)="uploadPic()">upload</button>
+           
+              <div class="name">{{fname | uppercase}}</div>
               <div class="email">{{email}}</div>
-            
-          </mat-card>
+
+          </mat-card>                                                                     
         </div>
         <mat-divider></mat-divider>
 
