@@ -9,7 +9,9 @@
 
         <div class="textBrk">
             {{note.description}}
+           
         </div>
+        <label> {{note.description}}</label>
     </div>
         <mat-card-actions>
             <app-icons class="icons" [notesicon]="note" (afterUpdateevent)="afterUpdate($event)"></app-icons>

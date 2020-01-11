@@ -44,11 +44,13 @@ trash(){
 }
 
 selectedFile:any;
-img:any='image'
+
 onFileSelected(event){
   console.log("Evvent to upolad image--",event.target.files[0].name);
-  this.selectedFile=event.target.files[0].name;
-  
+  this.selectedFile=event.target.files[0];
+  this.uploadPic();
+  localStorage.removeItem('profilePicUser');
+
 }
 
 uploadPic(){
@@ -56,8 +58,11 @@ uploadPic(){
   const uploadData= new FormData();
 
     uploadData.append('image', this.selectedFile);
-    this.userService.uploadProfilePic(uploadData).subscribe(res => {
+    this.userService.uploadProfilePic(uploadData).subscribe((res:any) => {
       console.log("Getting all collab users--->", res);
+      console.log("Gedffdfdftting all collab users--->", res.imageUrl);
+      localStorage.setItem('profilePicUser',res.imageUrl)
+      this.profilePicUser=localStorage.getItem('profilePicUser');
 
     })
   }

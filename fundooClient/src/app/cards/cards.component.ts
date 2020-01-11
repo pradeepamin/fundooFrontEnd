@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output ,EventEmitter} from '@angular/core';
 import { EditnoteComponent } from '../editnote/editnote.component';
 import {MatDialog, MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
+import { DataService } from '../services/data.service';
 
 
 @Component({
@@ -13,11 +14,16 @@ export class CardsComponent implements OnInit {
   @Output() afterUpdateEvent= new EventEmitter();
   // @Output() colorEvent= new EventEmitter();
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog,private dataService:DataService) {}
 
 
   ngOnInit() {
- 
+    console.log("ALl notess in cardddddd----",this.notes);
+    
+ this.dataService.editedData.subscribe((data:any)=>{
+   console.log("data ftom collaabbb----<>>>",data);
+   
+ })
     
     
   }
@@ -30,8 +36,8 @@ export class CardsComponent implements OnInit {
     const dialogRef=this.dialog.open(EditnoteComponent,{
       data:{note}
     })
-    
-
   }
-  
+
+
+
 }

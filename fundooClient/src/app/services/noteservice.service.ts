@@ -93,5 +93,10 @@ export class NoteserviceService {
     console.log("add collab id in service---->>",addColl);
     return this.httpNoteService.post(this.noteUrl+ 'addCollaborator', addColl)
   }
+
+  // collabLabels(){
+  //   return this.httpNoteService.get(this.noteUrl+ 'getAllCollaborator', {})
+
+  // }
  
 }

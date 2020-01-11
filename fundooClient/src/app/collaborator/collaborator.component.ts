@@ -15,13 +15,14 @@ export class CollaboratorComponent implements OnInit {
   fname: any;
   email: any;
   profilePicUser: any;
-  fruits: Array<string>;
+
   collarr: any;
   
   
   
   email1 = new FormControl();
   message:string;
+  ToData: any[];
   constructor(private noteService: NoteserviceService, @Inject(MAT_DIALOG_DATA) public data: any,private dataService:DataService) {
     this.onenote = this.data;
     console.log("note id:", this.onenote);
@@ -43,6 +44,7 @@ export class CollaboratorComponent implements OnInit {
       "noteId": this.onenote.noteId
     }
     this.noteService.getCollab(noteId).subscribe((res: any) => {
+      console.log("Getting all coldddddaaxxlab users--->", res);
       console.log("Getting all collab users--->", res.data.collaboratorUsers);
       let res2 = res.data.collaboratorUsers;
       let UserDetailsArray = [];
@@ -61,11 +63,15 @@ export class CollaboratorComponent implements OnInit {
       console.log("collab user details->", collabUserDetails);
       console.log("collab user details->", UserDetailsArray);
       this.collarr = UserDetailsArray;
-      this.fruits=UserDetailsArray;
+      this.ToData=UserDetailsArray;
       for (var key of UserDetailsArray) {
         console.log(key.email);
       }
+      console.log("This array result datatt-----",this.ToData);
+      
+      this.dataService.CollabUSersTOCard(this.ToData)
     })
+    
   }
   
   

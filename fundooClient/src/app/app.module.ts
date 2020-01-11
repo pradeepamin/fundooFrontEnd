@@ -42,7 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { BehaviorSubject } from 'rxjs';
-
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,9 @@ import { BehaviorSubject } from 'rxjs';
     LoginComponent,
     RegisterComponent, 
     InputFundooComponent, ForgotPasswordComponent, ResetPasswordComponent, 
-    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, IconsComponent, MainnoteComponent, EditnoteComponent, ArchivenoteComponent, TrashComponent, CollaboratorComponent
+    DashboardComponent, DashhComponent, CreatenoteComponent, CardsComponent, 
+    IconsComponent, MainnoteComponent, EditnoteComponent, ArchivenoteComponent, 
+    TrashComponent, CollaboratorComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +80,8 @@ import { BehaviorSubject } from 'rxjs';
     MatDialogModule,
     MatTooltipModule,
     OwlDateTimeModule, 
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    MatFileUploadModule
     
 
   ],

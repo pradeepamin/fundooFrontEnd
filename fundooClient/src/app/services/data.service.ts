@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private messageSource = new BehaviorSubject('default message');
-  currentMessage = this.messageSource.asObservable();
+  private Data = new Subject<string>();
+  editedData = this.Data.asObservable();
+
+  
   constructor() { }
-  changeMessage(message: string) {
-    this.messageSource.next(message)
+  CollabUSersTOCard(data){
+    console.log("Data in data service--",data);
+    this.Data.next(data)
   }
+
+ 
 }
+
+
+ 
+  

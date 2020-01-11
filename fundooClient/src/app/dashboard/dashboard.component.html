@@ -53,20 +53,25 @@
 
     <div>
       <button mat-icon-button [matMenuTriggerFor]="menu">
-        <img mat-card-avatar src="{{ profilePicUser }}" class="profile1" />
-        
-
+        <img mat-card-avatar src={{profilePicUser}} class="profile1" />
       </button>                                                                                                 
 
       <mat-menu #menu="matMenu">
         <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
           <mat-card style="overflow: hidden">
             <div class="image-container" style="padding-top: 50%;">
-              <img class="topic-avatar" mat-card-avatar src="{{ profilePicUser }}" (profilePic)="changeProfilePic()"
-                (click)="openSetProfileDialog()">
+              <!-- <img class="topic-avatar" mat-card-avatar src="{{ profilePicUser }}">
+                <input type="file" (change)="onFileSelected($event)"> -->
+      
             </div>
-            <input type="file" (change)="onFileSelected($event)">
-            <button mat-button (click)="uploadPic()">upload</button>
+            <div>
+            <img class="topic-avatar" mat-card-avatar src="{{ profilePicUser }}">
+                <label class="btn-upload">
+                  <input type="file" name="fileupload" (change)="onFileSelected($event)">
+                  <button class="btn">Change</button>
+              </label>
+           
+            </div>
            
               <div class="name">{{fname | uppercase}}</div>
               <div class="email">{{email}}</div>
