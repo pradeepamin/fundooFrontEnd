@@ -13,12 +13,20 @@ export class CardsComponent implements OnInit {
   @Input() notes:any; //recvies from parent mainComponent
   @Output() afterUpdateEvent= new EventEmitter();
   // @Output() colorEvent= new EventEmitter();
+  toGrid;
 
   constructor(private dialog: MatDialog,private dataService:DataService) {}
 
 
   ngOnInit() {
     console.log("ALl notess in cardddddd----",this.notes);
+
+    this.dataService.List.subscribe(res=>{
+      console.log("RESS of grid-->",res);
+      
+      this.toGrid=res;
+    })
+ 
     
  this.dataService.editedData.subscribe((data:any)=>{
    console.log("data ftom collaabbb----<>>>",data);
