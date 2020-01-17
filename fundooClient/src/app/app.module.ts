@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +43,7 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { BehaviorSubject } from 'rxjs';
 import { MatFileUploadModule } from 'angular-material-fileupload';
-
+import { AmazingTimePickerModule } from 'amazing-time-picker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,9 +81,9 @@ import { MatFileUploadModule } from 'angular-material-fileupload';
     MatTooltipModule,
     OwlDateTimeModule, 
     OwlNativeDateTimeModule,
-    MatFileUploadModule
-    
-
+    MatFileUploadModule,
+    NgxMaterialTimepickerModule,
+    AmazingTimePickerModule
   ],
 
 entryComponents:[
