@@ -82,8 +82,6 @@ export class NoteserviceService {
     
   DeleteCollaborator(deleteCollab){
     console.log("data-form service to delete collab->",deleteCollab);
-    
-    
     return this.httpNoteService.put(this.noteUrl+ 'deleteCollaborator', deleteCollab)
   }
 
@@ -98,5 +96,11 @@ export class NoteserviceService {
   //   return this.httpNoteService.get(this.noteUrl+ 'getAllCollaborator', {})
 
   // }
+
+  dateTimeReminder(dateTime){
+    console.log("Date time in service---",dateTime);
+    
+    return this.httpNoteService.post(this.noteUrl+ 'addReminder', dateTime)  
+  }
  
 }
