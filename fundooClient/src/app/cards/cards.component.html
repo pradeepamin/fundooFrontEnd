@@ -1,4 +1,4 @@
-<div class="divClass">
+<div class="divClass" *ngIf="toGrid">
 
     <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="note.noteColor">
        <div (click)="openDialog(note)" > 
@@ -11,7 +11,7 @@
             {{note.description}}
            
         </div>
-        <label> {{note.description}}</label>
+        <!-- <label> {{note.description}}</label> -->
     </div>
         <mat-card-actions>
             <app-icons class="icons" [notesicon]="note" (afterUpdateevent)="afterUpdate($event)"></app-icons>
@@ -19,19 +19,28 @@
         </mat-card-actions>
     </mat-card>
 </div>
-<!-- 
-<div class="divClass">
-    <mat-card class="mat-card" *ngFor="let note of notes">
-        <mat-card-header>
-            <mat-card-title>{{note.title}}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                {{note.description}}
-                </mat-card-content>
-                
-                <mat-card-actions>
-                <app-icons></app-icons>
-                </mat-card-actions>
+
+<div class="divClass1" *ngIf="!toGrid">
+
+    <mat-card class="mat-card1" *ngFor="let note of notes" [style.backgroundColor]="note.noteColor">
+       <div (click)="openDialog(note)" > 
+
+        <div class="textBrk">
+            {{note.title}}
+        </div>
+
+        <div class="textBrk">
+            {{note.description}}
+           
+        </div>
+        <!-- <label> {{note.description}}</label> -->
+    </div>
+        <mat-card-actions>
+            <app-icons class="icons" [notesicon]="note" (afterUpdateevent)="afterUpdate($event)"></app-icons>
+     
+        </mat-card-actions>
     </mat-card>
-</div> 
-  -->
+</div>
+
+
+ 
