@@ -3,12 +3,14 @@ import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import { log } from 'util';
 import { NoteserviceService } from '../services/noteservice.service';
+import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  grid:boolean=true;;
   localstorage_image:any
   imageurl:string
   fname;
@@ -17,7 +19,7 @@ export class DashboardComponent implements OnInit {
   username;
   profilePicUser;
   url;
-  constructor(private userService:UserServiceService,private router:Router,private noteService:NoteserviceService) { }
+  constructor(private userService:UserServiceService,private router:Router,private noteService:NoteserviceService,private dataService:DataService) { }
 
   ngOnInit() {
     this.fname=localStorage.getItem('firstNameUser');
@@ -65,6 +67,11 @@ uploadPic(){
       this.profilePicUser=localStorage.getItem('profilePicUser');
 
     })
+  }
+  gridView(){
+  this.grid=!this.grid
+  this.dataService.gridList(this.grid)
+
   }
 
 
