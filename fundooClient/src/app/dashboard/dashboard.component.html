@@ -32,20 +32,20 @@
     </div>
 
 
-    <div fxLayout="row" fxLayoutAlign="center center" fxFlex="20" fxLayoutGap="30px">
+    <!-- <div fxLayout="row" fxLayoutAlign="center center" fxFlex="10" fxLayoutGap="30px">
       <button mat-icon-button fxHide.xs="true">
-        <mat-icon fxFlex="10" (click)="setGridAndListView()">icon</mat-icon>
+        <mat-icon fxFlex="10" (click)="gridView()">view_stream</mat-icon>
       </button>
-    </div>
+    </div> -->
 
 
-    <div fxFlex="14" fxShow fxHide.xs fxShow fxHide.xs>
+    <div fxLayout="row" fxLayoutAlign="center center" fxFlex="10" fxLayoutGap="30px">
       <button mat-icon-button style="margin-top:10px;margin-left: 100px; outline: none;" class="materialicons"
-        *ngIf=!list (click)=View() matTooltip="List view" fxShow="true">
+        *ngIf=!grid (click)=gridView() matTooltip="List view" fxShow="true">
         <i class="material-icons">view_stream</i>
       </button>
       <button fxShow fxHide.xs fxShow fxHide.xs mat-icon-button
-        style="margin-top:10px;margin-left: 100px; outline: none;" *ngIf=list (click)=View() matTooltip="Grid view"
+        style="margin-top:10px;margin-left: 100px; outline: none;" *ngIf=grid (click)=gridView() matTooltip="Grid view"
         fxShow="true">
         <i class="material-icons">view_module</i>
       </button>
