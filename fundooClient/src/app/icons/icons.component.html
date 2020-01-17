@@ -1,4 +1,19 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-icon-button>
+        <img style="width: 20px;height: 20px;" src="../../assets/notification.svg" matTooltip="Remainder" (click)="open(notesicon._id)">
+       
+        <!-- <div>
+            <input placeholder="Default time 11:11 pm" [ngxTimepicker]="defaultTime" (change)="selectChanged($event)">
+            <ngx-material-timepicker #defaultTime [defaultTime]="'11:11 pm'"></ngx-material-timepicker>
+            
+          </div>    
+     -->
+    
+
+
+    </button>    
+    <!-- (click)="open($event) -->
+
     <button mat-icon-button (click)="dialogCol()">
         <img style="width:20px; height: 20px;" src="../../assets/collaborator.svg" matTooltip="colaborator" 
         (click)="dialogCol()">
