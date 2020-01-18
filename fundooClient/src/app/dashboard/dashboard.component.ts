@@ -58,8 +58,8 @@ onFileSelected(event){
 uploadPic(){
    console.log("pic data-->", this.selectedFile);
   const uploadData= new FormData();
+  uploadData.append('image', this.selectedFile);
 
-    uploadData.append('image', this.selectedFile);
     this.userService.uploadProfilePic(uploadData).subscribe((res:any) => {
       console.log("Getting all collab users--->", res);
       console.log("Gedffdfdftting all collab users--->", res.imageUrl);
