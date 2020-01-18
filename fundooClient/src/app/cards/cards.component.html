@@ -1,29 +1,40 @@
 <div class="divClass" *ngIf="toGrid">
 
     <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="note.noteColor">
-       <div (click)="openDialog(note)" > 
+        <div class="picc" *ngIf="note.noteImage">
+            <img src="{{note.noteImage}}" width="100%">
 
+            <i class="material-icons" (click)="deleteImage(note._id)">clear</i>
+        </div>
+       <div (click)="openDialog(note)" > 
+       
         <div class="textBrk">
             {{note.title}}
         </div>
 
         <div class="textBrk">
             {{note.description}}
-           
         </div>
+        
         <!-- <label> {{note.description}}</label> -->
     </div>
         <mat-card-actions>
             <app-icons class="icons" [notesicon]="note" (afterUpdateevent)="afterUpdate($event)"></app-icons>
-     
         </mat-card-actions>
     </mat-card>
 </div>
 
+
+
 <div class="divClass1" *ngIf="!toGrid">
 
     <mat-card class="mat-card1" *ngFor="let note of notes" [style.backgroundColor]="note.noteColor">
-       <div (click)="openDialog(note)" > 
+        <div class="picc" *ngIf="note.noteImage">
+            <img src="{{note.noteImage}}" width="100%">
+
+            <i class="material-icons" (click)="createNote()">clear</i>
+        </div>
+        <div (click)="openDialog(note)" > 
 
         <div class="textBrk">
             {{note.title}}
@@ -31,10 +42,9 @@
 
         <div class="textBrk">
             {{note.description}}
-           
         </div>
-        <!-- <label> {{note.description}}</label> -->
     </div>
+  
         <mat-card-actions>
             <app-icons class="icons" [notesicon]="note" (afterUpdateevent)="afterUpdate($event)"></app-icons>
      
