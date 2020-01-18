@@ -13,7 +13,7 @@ export class MainnoteComponent implements OnInit {
 
   ngOnInit() {
     this.getNotes()
-    this.getCollabNotes()
+    // this.getCollabNotes()
     // this.toDisplayLabelCollab()
   //  this.afterAdding(event)
 
@@ -25,17 +25,19 @@ export class MainnoteComponent implements OnInit {
       
     })
   }
-  getCollabNotes(){
-    this.noteService.getAllCollabNotes().subscribe((res:any)=>{
+  // getCollabNotes(){
+  //   this.noteService.getAllCollabNotes().subscribe((res:any)=>{
        
-       console.log("Getting all collab users--->", res.data)
-     for(let i of res.data){
+  //      console.log("Getting all collab users--->", res.data)
+  //    for(let i of res.data){
 
-      console.log("dddddddd",i);
-      this.allNotes.push(i.noteId)
-     }
-    })
-  }
+  //     console.log("dddddddd",i);
+  //     this.allNotes.push(i.noteId)
+  //    }
+  //   })
+  // }
+
+  
   // collarr: any;
   // toDisplayLabelCollab(){
   //   this.noteService.collabLabels().subscribe((res:any)=>{
