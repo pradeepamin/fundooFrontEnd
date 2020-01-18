@@ -19,10 +19,10 @@ export class NoteserviceService {
 
     return this.httpNoteService.get(this.noteUrl + 'getAllNote',{})
   } 
-  getAllCollabNotes(){
+  // getAllCollabNotes(){
 
-    return this.httpNoteService.get(this.noteUrl + 'getCollaboratorNote',{})
-  }
+  //   return this.httpNoteService.get(this.noteUrl + 'getCollaboratorNote',{})
+  // }
 
   archiveNote(card){
     return this.httpNoteService.put(this.noteUrl+ 'archiveNote', card)
@@ -102,5 +102,15 @@ export class NoteserviceService {
     
     return this.httpNoteService.post(this.noteUrl+ 'addReminder', dateTime)  
   }
- 
-}
+
+  uploadNotePic(NotePIC){
+    console.log("notepic in servcie",NotePIC);
+    
+  return this.httpNoteService.post(this.noteUrl+ 'noteImage', NotePIC)  
+  }
+  deleteNotePic(ID){
+    console.log("deletePIC in servcie",ID);
+    return this.httpNoteService.put(this.noteUrl+ 'deleteNoteImage', ID)  
+  
+} 
+} 
