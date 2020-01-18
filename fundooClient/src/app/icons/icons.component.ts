@@ -19,6 +19,7 @@ export class IconsComponent implements OnInit {
   public selectedTime = '18:33';
   today: string;
   isoo: any;
+  selectNoteImage: any;
 
   constructor(private noteServices: NoteserviceService, private dialog: MatDialog, private atp: AmazingTimePickerService) { }
 
@@ -28,9 +29,24 @@ export class IconsComponent implements OnInit {
 
   }
 
-  open(noteID) {
-    console.log("NOTE id in date-----",noteID);
+  noteImageChange(file){
+    this.selectNoteImage=file.target.files[0];
+    const uploadData= new FormData();
+    uploadData.append('image', this.selectNoteImage);
+    uploadData.append('noteId', this.notesicon._id);
+    this.noteServices.uploadNotePic(uploadData).subscribe((res:any) => {
+      console.log("Getting response after--->", res);
+      this.afterUpdateevent.emit("true");
     
+    })
+  
+    
+  }
+
+
+//This function is to set time , reminder
+  open(noteID) {
+    console.log("NoteID to set alram-----",noteID);
     const amazingTimePicker = this.atp.open({
       time: this.selectedTime,
       theme: 'dark',
@@ -41,7 +57,6 @@ export class IconsComponent implements OnInit {
     });
     amazingTimePicker.afterClose().subscribe(time => {
       this.selectedTime = time;
-
       var str = this.selectedTime;
       let time1 = str.replace(":", ",")
       let today = new Date();
@@ -50,37 +65,26 @@ export class IconsComponent implements OnInit {
       let yyyy = today.getFullYear();
 
       this.today = yyyy + ',' + mm + ',' + dd;
-      console.log("This date---", this.today);
+      // console.log("This date---", this.today);
       let con = this.today.concat(',', time1, ',', '0')
-      console.log("Time--", con);
+      // console.log("Time--", con);
 
       let timee = con.split(",")
       let op = new Date(parseInt(timee[0]), parseInt(timee[1]), parseInt(timee[2]), parseInt(timee[3]), parseInt(timee[4]), parseInt(timee[5]))
-      console.log("iso-----", op);
-      var iso = op.toISOString(); 
-      console.log("ISOOOOOO--",iso);
+      let iso = op.toISOString(); 
+      console.log("ISOOO Date--",iso);
    
       let dateTime={
         "noteId":noteID,
         "reminder":iso
       }
-      console.log("DDDDDt -",dateTime);
+      console.log("Date time to set reminder--->",dateTime);
 
       this.noteServices.dateTimeReminder(dateTime).subscribe(res => {
-        console.log("RES for date time ----------->", res);
-        // this.afterUpdateevent.emit("true");
-      })
-      
-
-      
+        console.log("Response after setting for date time ----------->", res);
+      })  
     });
-
-  
-    
-
   }
-
-
 
 
   //this function is for archive notes
@@ -95,6 +99,7 @@ export class IconsComponent implements OnInit {
     })
   }
 
+   //this function is for DeleteNote notes
   DeleteNote(card) {
     console.log("IDD---for delete>", card._id);
     let note1 = {
@@ -106,6 +111,7 @@ export class IconsComponent implements OnInit {
     })
   }
 
+ //this function is for setColor 
   setColor(color, note) {
     console.log("Color---->", color, note);
     let col = {
@@ -116,10 +122,11 @@ export class IconsComponent implements OnInit {
 
       console.log("Resssponse backk---->");
 
-      console.log("RES---colorNote-------->", res);
+      console.log("Response after setting note color-------->", res);
       this.afterUpdateevent.emit("true");
     })
   }
+  //this function to get collobartor 
   dialogCol(): void {
     console.log("Note id in colab111111--->", this.notesicon._id);
 
@@ -137,26 +144,24 @@ export class IconsComponent implements OnInit {
 
   }
 
+//Color arrays
   arrayOfColors = [
     [
       { color: "rgb(247, 86, 118)", name: "pink" },
-      { color: "darkgoldenrod", name: "darkGolden" },
+      { color: "rgb(141, 199, 214)", name: "darkGolden" },
       { color: "white", name: "white" }
     ],
     [
       { color: "slategray", name: "grey" },
-      { color: "rgb(750, 85, 3)", name: "pink" },
-      { color: "rgb(152, 70, 362)", name: "pink" }
+      { color: "rgb(209, 163, 151)", name: "pink" },
+      { color: "rgb(200, 232, 104)", name: "yellow" }
     ],
     [
-      { color: "rgba(35, 24, 192, 0.651)", name: "blue" },
-      { color: "rgb(149, 133, 144)", name: "lightPurple" },
-      { color: " rgb(134, 134, 92)", name: "darkYellow" }
+      { color: "rgba(204, 141, 214)", name: "blue" },
+      { color: "rgb(97, 191, 82)", name: "lightPurple" },
+      { color: " rgb(158, 136, 191)", name: "darkYellow" }
     ]
   ]
 
 }
-
-
-
 
