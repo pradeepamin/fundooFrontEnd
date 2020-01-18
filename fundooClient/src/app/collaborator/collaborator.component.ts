@@ -16,7 +16,7 @@ export class CollaboratorComponent implements OnInit {
   email: any;
   profilePicUser: any;
 
-  collarr: any;
+  collarr: any;  
   
   
   
@@ -24,8 +24,8 @@ export class CollaboratorComponent implements OnInit {
   message:string;
   ToData: any[];
   constructor(private noteService: NoteserviceService, @Inject(MAT_DIALOG_DATA) public data: any,private dataService:DataService) {
-    this.onenote = this.data;
-    console.log("note id:", this.onenote);
+    this.onenote = this.data;  //gets id from icon component
+   
   }
 
   ngOnInit() {
@@ -34,17 +34,19 @@ export class CollaboratorComponent implements OnInit {
     this.profilePicUser = localStorage.getItem('profilePicUser');
     this.getAllColl();
    
+  
   }
 
  
-  
   getAllColl() {
-    console.log("note ffffffffffff:", this.onenote.noteId);
+    console.log("clicked noteId of collac-->:", this.onenote.noteId);
+    
     let noteId = {
       "noteId": this.onenote.noteId
     }
+    //To get collobator details based on noteID
     this.noteService.getCollab(noteId).subscribe((res: any) => {
-      console.log("Getting all coldddddaaxxlab users--->", res);
+      console.log("Getting all response from colla users--->", res);
       console.log("Getting all collab users--->", res.data.collaboratorUsers);
       let res2 = res.data.collaboratorUsers;
       let UserDetailsArray = [];
@@ -75,9 +77,6 @@ export class CollaboratorComponent implements OnInit {
   }
   
   
-
-
- 
   removeColab(item) {
 
     let deleteCollab = {
