@@ -20,11 +20,6 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
 
 
 
-// const routes: Routes = [
-//   { 
-//     path: '', component: LoginComponent
-//    },
-// ];
 const routes: Routes = [
   {                                          // removed square bracket
     path: '',
